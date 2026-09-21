@@ -5,65 +5,41 @@
   <sub>国内流量优先直连 · 海外流量按规则分流 · 关键业务独立策略组</sub>
 </p>
 
+---
+
+## 🚀 功能区域｜快速操作
+
 <p align="center">
   <a href="https://lowertop.github.io/Shadowrocket-First/redirect.html?url=shadowrocket%3A%2F%2Fconfig%2Fadd%2Fhttps%3A%2F%2Fraw.githubusercontent.com%2Fzhangbao20-sina%2FShadowrocket-Config%2Fmain%2FConfig%2FShadowrocket.conf">
     <img src="https://img.shields.io/badge/一键导入-完整配置-1677FF?style=for-the-badge&logo=rocket&logoColor=white" alt="一键导入完整配置">
   </a>
   <a href="https://lowertop.github.io/Shadowrocket-First/redirect.html?url=shadowrocket%3A%2F%2Finstall%3Fmodule%3Dhttps%3A%2F%2Fraw.githubusercontent.com%2Fzhangbao20-sina%2FShadowrocket-Config%2Fmain%2FModules%2FTalkatone.sgmodule">
-    <img src="https://img.shields.io/badge/一键安装-Talkatone模块-00A86B?style=for-the-badge&logo=rocket&logoColor=white" alt="一键安装 Talkatone 模块">
+    <img src="https://img.shields.io/badge/一键安装-Talkatone-00A86B?style=for-the-badge&logo=rocket&logoColor=white" alt="一键安装 Talkatone">
   </a>
   <a href="https://lowertop.github.io/Shadowrocket-First/redirect.html?url=shadowrocket%3A%2F%2Finstall%3Fmodule%3Dhttps%3A%2F%2Fraw.githubusercontent.com%2Fzhangbao20-sina%2FShadowrocket-Config%2Fmain%2FModules%2FYouTubeNoAds.sgmodule">
-    <img src="https://img.shields.io/badge/一键安装-YouTubeNoAds-FF0000?style=for-the-badge&logo=youtube&logoColor=white" alt="一键安装 YouTubeNoAds 模块">
+    <img src="https://img.shields.io/badge/一键安装-YouTubeNoAds-FF0000?style=for-the-badge&logo=youtube&logoColor=white" alt="一键安装 YouTubeNoAds">
+  </a>
+  <a href="https://lowertop.github.io/Shadowrocket-First/redirect.html?url=shadowrocket%3A%2F%2Finstall%3Fmodule%3Dhttps%3A%2F%2Fraw.githubusercontent.com%2Fzhangbao20-sina%2FShadowrocket-Config%2Fmain%2FModules%2FHongGuo-Local.sgmodule">
+    <img src="https://img.shields.io/badge/一键安装-红果短剧_Local-EF4444?style=for-the-badge&logo=rocket&logoColor=white" alt="一键安装 红果短剧 Local">
   </a>
 </p>
 
----
-
-## 📦 仓库内容
-
-| 文件 | 用途 |
-|---|---|
-| `Config/Shadowrocket.conf` | 完整 Shadowrocket 本地配置 |
-| `Modules/Talkatone.sgmodule` | Talkatone 本地适配模块，不再负责节点分流 |
-| `Modules/YouTubeNoAds.sgmodule` | YouTube / YouTube Music 去广告与增强模块 |
-| `Modules/HongGuo-Local.sgmodule` | 红果短剧个人维护版：广告拦截与兼容放行，不使用 MITM/脚本 |
-| `Modules/ThirdParty/` | 经许可镜像的第三方模块，统一保留上游来源与许可 |
-| `Scripts/YouTube/` | Maasea YouTube 脚本与许可证 |
-| `Scripts/ThirdParty/` | 第三方模块依赖脚本的本地镜像 |
-| `THIRD_PARTY_NOTICES.md` | 第三方来源、许可、修改范围与不镜像项目说明 |
-| `LICENSES/` | 第三方 GPL 许可证副本 |
+> **README 维护约定：** 以后凡是新增到本仓库、可由 Shadowrocket 直接导入或安装的正式配置 / 模块，都同步加入本页顶部“快速操作”按钮和下面的“可安装内容”区域，避免模块已经存在但 README 没有入口。
 
 ---
 
+## 🧩 功能区域｜可安装内容
 
-## 🧭 模块来源与维护规范
+| 项目 | 作用 | 操作 |
+|---|---|---|
+| **完整配置** | 本地分流、策略组、DNS、MITM 基础配置 | [一键导入](https://lowertop.github.io/Shadowrocket-First/redirect.html?url=shadowrocket%3A%2F%2Fconfig%2Fadd%2Fhttps%3A%2F%2Fraw.githubusercontent.com%2Fzhangbao20-sina%2FShadowrocket-Config%2Fmain%2FConfig%2FShadowrocket.conf) |
+| **Talkatone** | Talkatone 本地适配与去广告 | [一键安装](https://lowertop.github.io/Shadowrocket-First/redirect.html?url=shadowrocket%3A%2F%2Finstall%3Fmodule%3Dhttps%3A%2F%2Fraw.githubusercontent.com%2Fzhangbao20-sina%2FShadowrocket-Config%2Fmain%2FModules%2FTalkatone.sgmodule) |
+| **YouTubeNoAds** | YouTube / YouTube Music 去广告与增强 | [一键安装](https://lowertop.github.io/Shadowrocket-First/redirect.html?url=shadowrocket%3A%2F%2Finstall%3Fmodule%3Dhttps%3A%2F%2Fraw.githubusercontent.com%2Fzhangbao20-sina%2FShadowrocket-Config%2Fmain%2FModules%2FYouTubeNoAds.sgmodule) |
+| **红果短剧 Local** | 红果短剧广告拦截与兼容放行 | [一键安装](https://lowertop.github.io/Shadowrocket-First/redirect.html?url=shadowrocket%3A%2F%2Finstall%3Fmodule%3Dhttps%3A%2F%2Fraw.githubusercontent.com%2Fzhangbao20-sina%2FShadowrocket-Config%2Fmain%2FModules%2FHongGuo-Local.sgmodule) |
 
-本仓库把模块分为三类：
+### 完整配置
 
-- **本地维护**：针对本人的网络环境和使用习惯调整，例如本地配置、Talkatone 适配。
-- **许可镜像**：上游有明确开源许可证，保留原作者与来源后镜像到固定 Raw 地址，例如 AWAvenue、blackmatrix7 开屏去广告、fmz200 番茄小说 / 七猫小说。
-- **仅引用上游**：能找到公开代码，但未确认明确再分发许可或来源链不清晰的模块，不复制进仓库，只记录原始来源。
-
-这样做的目的不是“把别人代码变成自己的”，而是把**来源、许可、修改范围和维护责任写清楚**。完整记录见 [THIRD_PARTY_NOTICES.md](./THIRD_PARTY_NOTICES.md)。
-
-### 当前新增的第三方镜像
-
-| 模块 | 本地路径 | 上游 | 许可 |
-|---|---|---|---|
-| AWAvenue Ads Rule | `Modules/ThirdParty/AWAvenue-Ads-Rule-Shadowrocket.module` | TG-Twilight/AWAvenue-Ads-Rule | GPL-3.0 |
-| 开屏去广告 | `Modules/ThirdParty/StartupAds.sgmodule` | blackmatrix7/ios_rule_script | GPL-2.0 |
-| 番茄小说 | `Modules/ThirdParty/FanQieNovel.sgmodule` | fmz200/wool_scripts | GPL-3.0 |
-| 七猫小说 | `Modules/ThirdParty/QiMaoNovel.sgmodule` | fmz200/wool_scripts | GPL-3.0 |
-
-> 红果短剧已改为 `HongGuo-Local.sgmodule` 个人维护版：保留公开来源与参考说明，但不作为 LOWERTOP 原文件的完整镜像。苹果助手、HK / UK / US Call 等模块，以及 APP 启动页去广告 ultra+，仍只记录来源、不直接镜像。
-
-## ⚡ 一键导入
-
-### 完整本地配置
-
-> iPhone / iPad 上使用 Safari 打开下面按钮，允许浏览器唤起 Shadowrocket。
-
-[![导入 Shadowrocket](https://img.shields.io/badge/打开_Shadowrocket-导入完整配置-1677FF?style=for-the-badge)](https://lowertop.github.io/Shadowrocket-First/redirect.html?url=shadowrocket%3A%2F%2Fconfig%2Fadd%2Fhttps%3A%2F%2Fraw.githubusercontent.com%2Fzhangbao20-sina%2FShadowrocket-Config%2Fmain%2FConfig%2FShadowrocket.conf)
+[![导入完整配置](https://img.shields.io/badge/打开_Shadowrocket-导入完整配置-1677FF?style=for-the-badge)](https://lowertop.github.io/Shadowrocket-First/redirect.html?url=shadowrocket%3A%2F%2Fconfig%2Fadd%2Fhttps%3A%2F%2Fraw.githubusercontent.com%2Fzhangbao20-sina%2FShadowrocket-Config%2Fmain%2FConfig%2FShadowrocket.conf)
 
 **Raw 地址**
 
@@ -71,7 +47,7 @@
 https://raw.githubusercontent.com/zhangbao20-sina/Shadowrocket-Config/main/Config/Shadowrocket.conf
 ```
 
-### Talkatone 模块
+### Talkatone
 
 [![安装 Talkatone](https://img.shields.io/badge/打开_Shadowrocket-安装_Talkatone-00A86B?style=for-the-badge)](https://lowertop.github.io/Shadowrocket-First/redirect.html?url=shadowrocket%3A%2F%2Finstall%3Fmodule%3Dhttps%3A%2F%2Fraw.githubusercontent.com%2Fzhangbao20-sina%2FShadowrocket-Config%2Fmain%2FModules%2FTalkatone.sgmodule)
 
@@ -81,17 +57,9 @@ https://raw.githubusercontent.com/zhangbao20-sina/Shadowrocket-Config/main/Confi
 https://raw.githubusercontent.com/zhangbao20-sina/Shadowrocket-Config/main/Modules/Talkatone.sgmodule
 ```
 
-### 红果短剧 Local
+模块只负责较明确的广告处理；业务分流由本地配置中的 `TALKATONE_NODE` 管理。
 
-本仓库提供独立维护的红果短剧模块，不依赖第三方 Raw 地址：
-
-```text
-https://raw.githubusercontent.com/zhangbao20-sina/Shadowrocket-Config/main/Modules/HongGuo-Local.sgmodule
-```
-
-当前版本仅使用规则层拦截，不启用 MITM、JavaScript 或响应改写。规则经网络复查后采用稳定优先策略：保留 `p3-ad-sign.byteimg.com` 精确直连例外，并拦截已被多个公开规则源重复识别的红果/字节广告资源。详细参考与取舍见模块头部注释及 `THIRD_PARTY_NOTICES.md`。
-
-### YouTubeNoAds 模块
+### YouTubeNoAds
 
 [![安装 YouTubeNoAds](https://img.shields.io/badge/打开_Shadowrocket-安装_YouTubeNoAds-FF0000?style=for-the-badge&logo=youtube&logoColor=white)](https://lowertop.github.io/Shadowrocket-First/redirect.html?url=shadowrocket%3A%2F%2Finstall%3Fmodule%3Dhttps%3A%2F%2Fraw.githubusercontent.com%2Fzhangbao20-sina%2FShadowrocket-Config%2Fmain%2FModules%2FYouTubeNoAds.sgmodule)
 
@@ -101,11 +69,63 @@ https://raw.githubusercontent.com/zhangbao20-sina/Shadowrocket-Config/main/Modul
 https://raw.githubusercontent.com/zhangbao20-sina/Shadowrocket-Config/main/Modules/YouTubeNoAds.sgmodule
 ```
 
-模块调用的两份 JavaScript 也已镜像到本仓库固定 Raw 地址，避免运行时依赖第三方仓库路径。
+依赖脚本已经镜像到本仓库固定 Raw 地址，减少上游路径变化带来的失效风险。
+
+### 红果短剧 Local
+
+[![安装 红果短剧 Local](https://img.shields.io/badge/打开_Shadowrocket-安装_红果短剧_Local-EF4444?style=for-the-badge)](https://lowertop.github.io/Shadowrocket-First/redirect.html?url=shadowrocket%3A%2F%2Finstall%3Fmodule%3Dhttps%3A%2F%2Fraw.githubusercontent.com%2Fzhangbao20-sina%2FShadowrocket-Config%2Fmain%2FModules%2FHongGuo-Local.sgmodule)
+
+**Raw 地址**
+
+```text
+https://raw.githubusercontent.com/zhangbao20-sina/Shadowrocket-Config/main/Modules/HongGuo-Local.sgmodule
+```
+
+个人维护版，当前只使用规则层拦截，不使用 MITM、JavaScript 或响应改写；以稳定、低冲突为优先。
 
 ---
 
-## 🔄 远程更新
+## 📚 展示与说明区域｜仓库结构
+
+| 路径 | 内容 |
+|---|---|
+| `Config/Shadowrocket.conf` | 完整 Shadowrocket 本地配置 |
+| `Modules/Talkatone.sgmodule` | Talkatone 本地适配模块 |
+| `Modules/YouTubeNoAds.sgmodule` | YouTube / YouTube Music 去广告与增强 |
+| `Modules/HongGuo-Local.sgmodule` | 红果短剧个人维护版 |
+| `Modules/ThirdParty/` | 经许可镜像的第三方模块 |
+| `Scripts/YouTube/` | Maasea YouTube 脚本与许可证 |
+| `Scripts/ThirdParty/` | 第三方模块依赖脚本镜像 |
+| `THIRD_PARTY_NOTICES.md` | 第三方来源、许可、修改范围与维护说明 |
+| `LICENSES/` | 第三方许可证副本 |
+
+---
+
+## 🧭 展示与说明区域｜来源与维护规范
+
+本仓库按来源和维护责任分为三类：
+
+| 类型 | 含义 | 示例 |
+|---|---|---|
+| **本地维护** | 根据个人网络环境与实测结果长期维护 | 本地配置、Talkatone、红果短剧 Local |
+| **许可镜像** | 上游存在明确开源许可，保留来源和许可证后本地镜像 | AWAvenue、blackmatrix7、fmz200、Maasea |
+| **仅引用上游** | 可找到公开代码，但许可或来源链不够明确，因此不直接复制 | 部分第三方模块 |
+
+### 当前许可镜像
+
+| 模块 | 本地路径 | 上游 | 许可 |
+|---|---|---|---|
+| AWAvenue Ads Rule | `Modules/ThirdParty/AWAvenue-Ads-Rule-Shadowrocket.module` | TG-Twilight/AWAvenue-Ads-Rule | GPL-3.0 |
+| 开屏去广告 | `Modules/ThirdParty/StartupAds.sgmodule` | blackmatrix7/ios_rule_script | GPL-2.0 |
+| 番茄小说 | `Modules/ThirdParty/FanQieNovel.sgmodule` | fmz200/wool_scripts | GPL-3.0 |
+| 七猫小说 | `Modules/ThirdParty/QiMaoNovel.sgmodule` | fmz200/wool_scripts | GPL-3.0 |
+| YouTube 脚本 | `Scripts/YouTube/` | Maasea/sgmodule | Apache-2.0 |
+
+红果短剧使用 `HongGuo-Local.sgmodule` 独立维护，并保留公开参考来源说明；它不是 LOWERTOP 原文件的官方镜像。完整第三方记录见 [THIRD_PARTY_NOTICES.md](./THIRD_PARTY_NOTICES.md)。
+
+---
+
+## 🔄 功能区域｜远程更新
 
 本仓库已经按 **固定 Raw 地址** 配置远程更新。以后只要继续更新 `main` 分支中的同一路径，手机端无需重新找安装链接。
 
@@ -152,7 +172,7 @@ https://raw.githubusercontent.com/zhangbao20-sina/Shadowrocket-Config/main/Scrip
 
 ---
 
-## 🎯 当前分流设计
+## ⚙️ 配置说明｜当前分流设计
 
 ### 手动选择节点
 
@@ -182,7 +202,7 @@ YAHOO_NODE = url-test
 
 ---
 
-## 🤖 Gemini 优化
+## 🤖 配置说明｜Gemini
 
 原配置中的 Gemini 规则过宽，容易把其他 Google 服务一起拉进 Gemini 节点。
 
@@ -210,7 +230,7 @@ aida.googleapis.com
 
 ---
 
-## ☎️ Talkatone 优化
+## ☎️ 模块说明｜Talkatone
 
 Talkatone 现在采用 **本地配置负责分流，模块只负责去广告** 的结构。
 
@@ -246,7 +266,7 @@ TALKATONE_NODE
 
 ---
 
-## ▶️ YouTube
+## ▶️ 模块说明｜YouTube
 
 YouTube 当前仍以稳定优先：
 
@@ -261,7 +281,7 @@ YouTube 当前仍以稳定优先：
 
 ---
 
-## 🌐 DNS
+## 🌐 配置说明｜DNS
 
 当前 DNS 设置维持现状，本轮没有改动。
 
@@ -277,7 +297,7 @@ YouTube 当前仍以稳定优先：
 
 ---
 
-## 🚧 UDP / 443
+## 🚧 配置说明｜UDP / 443
 
 当前仍保留：
 
@@ -291,7 +311,7 @@ AND,((PROTOCOL,UDP),(DEST-PORT,443)),REJECT-NO-DROP
 
 ---
 
-## 🛡️ MITM 证书说明
+## 🛡️ 安全说明｜MITM 证书
 
 公开仓库版本 **不会包含 MITM 私钥证书**，因此以下敏感字段不会上传：
 
@@ -314,7 +334,7 @@ enable = true
 
 ---
 
-## 📱 导入后的设置
+## 📱 使用说明｜导入后的设置
 
 导入完整配置后：
 
@@ -328,7 +348,7 @@ enable = true
 
 ---
 
-## 🧪 当前测试重点
+## 🧪 使用说明｜当前测试重点
 
 建议优先测试：
 
@@ -344,7 +364,7 @@ enable = true
 
 ---
 
-## 🔗 原生 Shadowrocket URL Scheme
+## 🔗 展示与说明｜原生 Shadowrocket URL Scheme
 
 完整配置：
 
@@ -372,7 +392,7 @@ shadowrocket://install?module=https://raw.githubusercontent.com/zhangbao20-sina/
 
 ---
 
-## ⚠️ 说明
+## ⚠️ 展示与说明｜使用说明
 
 这是个人使用配置，默认行为按本人的网络环境和使用习惯优化，并不以通用公共规则集为目标。
 
@@ -387,7 +407,7 @@ shadowrocket://install?module=https://raw.githubusercontent.com/zhangbao20-sina/
 
 ---
 
-## ⚖️ 署名、许可与使用边界
+## ⚖️ 展示与说明｜署名、许可与使用边界
 
 本仓库遵循以下原则：保留原作者署名和原始项目链接；遵守上游许可证；明确标注本地修改；不把公开可见等同于允许再分发；不上传私钥、凭证或订阅密钥；上游作者如对镜像、署名或使用方式有新的明确要求，以其最新要求为准。
 
