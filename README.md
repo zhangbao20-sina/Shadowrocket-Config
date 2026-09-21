@@ -51,6 +51,35 @@ https://raw.githubusercontent.com/zhangbao20-sina/Shadowrocket-Config/main/Modul
 
 ---
 
+## 🔄 远程更新
+
+本仓库已经按 **固定 Raw 地址** 配置远程更新。以后只要继续更新 `main` 分支中的同一路径，手机端无需重新找安装链接。
+
+### 完整本地配置
+
+`Config/Shadowrocket.conf` 已在 `[General]` 中加入：
+
+```text
+update-url = https://raw.githubusercontent.com/zhangbao20-sina/Shadowrocket-Config/main/Config/Shadowrocket.conf
+```
+
+首次通过上方“一键导入完整配置”安装后，后续可直接在 Shadowrocket 的配置页面对该配置执行**更新**，即可重新拉取 GitHub 上的最新版。
+
+### Talkatone 模块
+
+`Modules/Talkatone.sgmodule` 已加入：
+
+```text
+#!url=https://raw.githubusercontent.com/zhangbao20-sina/Shadowrocket-Config/main/Modules/Talkatone.sgmodule
+#!update-url=https://raw.githubusercontent.com/zhangbao20-sina/Shadowrocket-Config/main/Modules/Talkatone.sgmodule
+```
+
+以后模块内容在 GitHub 更新后，可直接在 Shadowrocket 的模块页面更新，不需要删除后重新安装。
+
+> 远程更新依赖公开可访问的 Raw 地址，因此仓库需要保持 Public；不要把 MITM 私钥、密码、订阅密钥等敏感内容提交到这个公开仓库。
+
+---
+
 ## 🎯 当前分流设计
 
 ### 手动选择节点
