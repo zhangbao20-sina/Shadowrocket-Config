@@ -50,11 +50,22 @@
 ## 只引用、不镜像的上游
 
 ### LOWERTOP/Shadowrocket-First
-截图中的 Talkatone、红果短剧、苹果助手、香港 / 英国 / 美国 Wi-Fi Calling 等模块可在该仓库找到。检查日期：2026-09-22。该仓库根目录当时未发现明确的仓库级 LICENSE，因此本次不新增复制其模块。
+截图中的 Talkatone、红果短剧、苹果助手、香港 / 英国 / 美国 Wi-Fi Calling 等模块可在该仓库找到。检查日期：2026-09-22。该仓库根目录当时未发现明确的仓库级 LICENSE，因此本仓库不把这些文件作为“原样第三方镜像”批量复制。
 
 上游：https://github.com/LOWERTOP/Shadowrocket-First
 
 当前仓库中的 `Modules/Talkatone.sgmodule` 是此前已经存在的本地适配版本；应继续保留对 LOWERTOP 的来源说明，并在后续确认授权范围后再决定是否扩大镜像。
+
+### 红果短剧 Local — 本地独立维护
+
+- 本地位置：`Modules/HongGuo-Local.sgmodule`
+- 维护者：`zhangbao20-sina`
+- 性质：个人维护适配版，不是 LOWERTOP 原文件的官方镜像。
+- 公开参考之一：https://github.com/LOWERTOP/Shadowrocket-First/blob/main/HongGuo.module
+- 网络复查：同时参考了 AWAvenue Ads Rule、v2fly/domain-list-community 及其他公开广告规则中对相关域名的分类。
+- 取舍：保留 `p3-ad-sign.byteimg.com` 精确直连例外；采用 `REJECT` 而不是 `REJECT-DROP`；增加已被多个来源交叉确认的 `ads*-normal-l*.zijieapi.com`；暂不启用仅在少数来源出现的 `v11-reading-video.qznovelvod.com`。
+- 不使用：MITM、JavaScript、响应重写。
+- 署名原则：保留参考来源，不把公开参考项目的作者身份或项目名称冒充为本地原创。
 
 ### APP 启动页去广告 ultra+
 GitHub 上存在多个转存或修订副本，常见头部指向 whatshub / yfamilys 等站点，但本次没有确认到稳定、明确许可的原始 GitHub 上游，因此不复制到本仓库。这样做是为了避免把第三方转存再次当作“原作者代码”传播。
