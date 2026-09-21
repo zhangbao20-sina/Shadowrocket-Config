@@ -26,6 +26,7 @@
 | `Config/Shadowrocket.conf` | 完整 Shadowrocket 本地配置 |
 | `Modules/Talkatone.sgmodule` | Talkatone 本地适配模块，不再负责节点分流 |
 | `Modules/YouTubeNoAds.sgmodule` | YouTube / YouTube Music 去广告与增强模块 |
+| `Modules/HongGuo-Local.sgmodule` | 红果短剧个人维护版：广告拦截与兼容放行，不使用 MITM/脚本 |
 | `Modules/ThirdParty/` | 经许可镜像的第三方模块，统一保留上游来源与许可 |
 | `Scripts/YouTube/` | Maasea YouTube 脚本与许可证 |
 | `Scripts/ThirdParty/` | 第三方模块依赖脚本的本地镜像 |
@@ -54,7 +55,7 @@
 | 番茄小说 | `Modules/ThirdParty/FanQieNovel.sgmodule` | fmz200/wool_scripts | GPL-3.0 |
 | 七猫小说 | `Modules/ThirdParty/QiMaoNovel.sgmodule` | fmz200/wool_scripts | GPL-3.0 |
 
-> 红果短剧、苹果助手、HK / UK / US Call 等 LOWERTOP 模块，以及 APP 启动页去广告 ultra+，本次不做完整镜像；原因和上游链接已写入第三方说明文件。
+> 红果短剧已改为 `HongGuo-Local.sgmodule` 个人维护版：保留公开来源与参考说明，但不作为 LOWERTOP 原文件的完整镜像。苹果助手、HK / UK / US Call 等模块，以及 APP 启动页去广告 ultra+，仍只记录来源、不直接镜像。
 
 ## ⚡ 一键导入
 
@@ -79,6 +80,16 @@ https://raw.githubusercontent.com/zhangbao20-sina/Shadowrocket-Config/main/Confi
 ```text
 https://raw.githubusercontent.com/zhangbao20-sina/Shadowrocket-Config/main/Modules/Talkatone.sgmodule
 ```
+
+### 红果短剧 Local
+
+本仓库提供独立维护的红果短剧模块，不依赖第三方 Raw 地址：
+
+```text
+https://raw.githubusercontent.com/zhangbao20-sina/Shadowrocket-Config/main/Modules/HongGuo-Local.sgmodule
+```
+
+当前版本仅使用规则层拦截，不启用 MITM、JavaScript 或响应改写。规则经网络复查后采用稳定优先策略：保留 `p3-ad-sign.byteimg.com` 精确直连例外，并拦截已被多个公开规则源重复识别的红果/字节广告资源。详细参考与取舍见模块头部注释及 `THIRD_PARTY_NOTICES.md`。
 
 ### YouTubeNoAds 模块
 
@@ -351,6 +362,12 @@ YouTubeNoAds 模块：
 
 ```text
 shadowrocket://install?module=https://raw.githubusercontent.com/zhangbao20-sina/Shadowrocket-Config/main/Modules/YouTubeNoAds.sgmodule
+```
+
+红果短剧 Local：
+
+```text
+shadowrocket://install?module=https://raw.githubusercontent.com/zhangbao20-sina/Shadowrocket-Config/main/Modules/HongGuo-Local.sgmodule
 ```
 
 ---
