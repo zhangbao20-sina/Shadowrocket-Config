@@ -71,14 +71,14 @@ shadowrocket://config/add/https://raw.githubusercontent.com/zhangbao20-sina/Shad
 
 ---
 
-### ☎️ Talkatone
+### ☎️ Talkatone Local
 
-本地配置负责业务分流，模块仅保留较明确的广告处理，减少节点名称变化和共享服务误杀带来的影响。
+个人维护版。模块只负责较明确的广告拦截；业务分流统一由本地配置 `TALKATONE_NODE` 管理，不在模块内指定 PROXY / DIRECT，也不启用 MITM 或响应改写。
 
 [![安装 Talkatone](https://img.shields.io/badge/打开_Shadowrocket-安装_Talkatone-00A86B?style=for-the-badge)](https://lowertop.github.io/Shadowrocket-First/redirect.html?url=shadowrocket%3A%2F%2Finstall%3Fmodule%3Dhttps%3A%2F%2Fraw.githubusercontent.com%2Fzhangbao20-sina%2FShadowrocket-Config%2Fmain%2FModules%2FTalkatone.sgmodule)
 
 <details>
-<summary><strong>查看 Raw 地址、Scheme 与当前设计</strong></summary>
+<summary><strong>查看 Raw 地址、Scheme 与维护说明</strong></summary>
 
 **Raw**
 
@@ -92,8 +92,8 @@ https://raw.githubusercontent.com/zhangbao20-sina/Shadowrocket-Config/main/Modul
 shadowrocket://install?module=https://raw.githubusercontent.com/zhangbao20-sina/Shadowrocket-Config/main/Modules/Talkatone.sgmodule
 ```
 
-业务分流统一由本地配置中的 `TALKATONE_NODE` 管理。  
-模块不再承担节点检测、代理分流和 Talkatone IP 分流。
+该模块为本仓库个人维护版本。  
+业务分流统一由本地配置中的 `TALKATONE_NODE` 管理；模块仅保留广告相关规则。
 
 </details>
 
@@ -289,7 +289,7 @@ ca-passphrase
 本仓库按维护责任分为三类：
 
 **本地维护**  
-根据个人网络环境与实际测试长期维护，例如完整配置、Talkatone 和红果短剧 Local。
+根据个人网络环境与实际测试长期维护，例如完整配置、Talkatone Local 和红果短剧 Local。
 
 **许可镜像**  
 上游存在明确开源许可，保留作者、来源与许可证后保存本地副本，例如 Maasea、AWAvenue、blackmatrix7、fmz200。
