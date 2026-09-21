@@ -12,6 +12,9 @@
   <a href="https://lowertop.github.io/Shadowrocket-First/redirect.html?url=shadowrocket%3A%2F%2Finstall%3Fmodule%3Dhttps%3A%2F%2Fraw.githubusercontent.com%2Fzhangbao20-sina%2FShadowrocket-Config%2Fmain%2FModules%2FTalkatone.sgmodule">
     <img src="https://img.shields.io/badge/一键安装-Talkatone模块-00A86B?style=for-the-badge&logo=rocket&logoColor=white" alt="一键安装 Talkatone 模块">
   </a>
+  <a href="https://lowertop.github.io/Shadowrocket-First/redirect.html?url=shadowrocket%3A%2F%2Finstall%3Fmodule%3Dhttps%3A%2F%2Fraw.githubusercontent.com%2Fzhangbao20-sina%2FShadowrocket-Config%2Fmain%2FModules%2FYouTubeNoAds.sgmodule">
+    <img src="https://img.shields.io/badge/一键安装-YouTubeNoAds-FF0000?style=for-the-badge&logo=youtube&logoColor=white" alt="一键安装 YouTubeNoAds 模块">
+  </a>
 </p>
 
 ---
@@ -22,6 +25,8 @@
 |---|---|
 | `Config/Shadowrocket.conf` | 完整 Shadowrocket 本地配置 |
 | `Modules/Talkatone.sgmodule` | Talkatone 去广告模块，不再负责节点分流 |
+| `Modules/YouTubeNoAds.sgmodule` | YouTube / YouTube Music 去广告与增强模块 |
+| `Scripts/YouTube/` | 本仓库镜像的 Maasea YouTube 脚本与许可证 |
 
 ---
 
@@ -49,6 +54,18 @@ https://raw.githubusercontent.com/zhangbao20-sina/Shadowrocket-Config/main/Confi
 https://raw.githubusercontent.com/zhangbao20-sina/Shadowrocket-Config/main/Modules/Talkatone.sgmodule
 ```
 
+### YouTubeNoAds 模块
+
+[![安装 YouTubeNoAds](https://img.shields.io/badge/打开_Shadowrocket-安装_YouTubeNoAds-FF0000?style=for-the-badge&logo=youtube&logoColor=white)](https://lowertop.github.io/Shadowrocket-First/redirect.html?url=shadowrocket%3A%2F%2Finstall%3Fmodule%3Dhttps%3A%2F%2Fraw.githubusercontent.com%2Fzhangbao20-sina%2FShadowrocket-Config%2Fmain%2FModules%2FYouTubeNoAds.sgmodule)
+
+**Raw 地址**
+
+```text
+https://raw.githubusercontent.com/zhangbao20-sina/Shadowrocket-Config/main/Modules/YouTubeNoAds.sgmodule
+```
+
+模块调用的两份 JavaScript 也已镜像到本仓库固定 Raw 地址，避免运行时依赖第三方仓库路径。
+
 ---
 
 ## 🔄 远程更新
@@ -75,6 +92,24 @@ update-url = https://raw.githubusercontent.com/zhangbao20-sina/Shadowrocket-Conf
 ```
 
 以后模块内容在 GitHub 更新后，可直接在 Shadowrocket 的模块页面更新，不需要删除后重新安装。
+
+### YouTubeNoAds 模块
+
+`Modules/YouTubeNoAds.sgmodule` 同样使用固定更新地址：
+
+```text
+#!url=https://raw.githubusercontent.com/zhangbao20-sina/Shadowrocket-Config/main/Modules/YouTubeNoAds.sgmodule
+#!update-url=https://raw.githubusercontent.com/zhangbao20-sina/Shadowrocket-Config/main/Modules/YouTubeNoAds.sgmodule
+```
+
+脚本固定使用：
+
+```text
+https://raw.githubusercontent.com/zhangbao20-sina/Shadowrocket-Config/main/Scripts/YouTube/youtube.response.js
+https://raw.githubusercontent.com/zhangbao20-sina/Shadowrocket-Config/main/Scripts/YouTube/youtube.request.js
+```
+
+上游为 `Maasea/sgmodule`，本地镜像保留 Apache-2.0 许可证；同步上游时建议两份脚本一起更新并重新实测。
 
 > 远程更新依赖公开可访问的 Raw 地址，因此仓库需要保持 Public；不要把 MITM 私钥、密码、订阅密钥等敏感内容提交到这个公开仓库。
 
@@ -176,13 +211,16 @@ TALKATONE_NODE
 
 ## ▶️ YouTube
 
-YouTube 当前保持稳定优先，本轮没有调整：
+YouTube 当前仍以稳定优先：
 
 - YouTube 原有域名分流结构保留
 - YouTubeNoAds 模块保持独立
+- 模块脚本改为本仓库固定 Raw 地址
+- 脚本逻辑保持 Maasea 当前上游版本，不做自行精简
+- 模块参数跟随上游当前写法，使用 `max-size=-1`
 - DNS 不因 YouTube 模块而调整
 
-这样可以减少一次修改多个变量导致去广告模块失效后难以定位的问题。
+这样既减少第三方 Raw 地址变化带来的风险，也避免同时修改脚本逻辑、DNS 和分流规则导致问题难以定位。
 
 ---
 
@@ -281,6 +319,12 @@ Talkatone 模块：
 
 ```text
 shadowrocket://install?module=https://raw.githubusercontent.com/zhangbao20-sina/Shadowrocket-Config/main/Modules/Talkatone.sgmodule
+```
+
+YouTubeNoAds 模块：
+
+```text
+shadowrocket://install?module=https://raw.githubusercontent.com/zhangbao20-sina/Shadowrocket-Config/main/Modules/YouTubeNoAds.sgmodule
 ```
 
 ---
