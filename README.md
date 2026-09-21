@@ -1,7 +1,7 @@
 # 🚀 Shadowrocket-Config
 
 <p align="center">
-  <b>个人使用的 Shadowrocket 本地规则与模块仓库</b><br>
+  <b>个人维护的 Shadowrocket 本地规则、模块与第三方上游镜像仓库</b><br>
   <sub>国内流量优先直连 · 海外流量按规则分流 · 关键业务独立策略组</sub>
 </p>
 
@@ -24,11 +24,37 @@
 | 文件 | 用途 |
 |---|---|
 | `Config/Shadowrocket.conf` | 完整 Shadowrocket 本地配置 |
-| `Modules/Talkatone.sgmodule` | Talkatone 去广告模块，不再负责节点分流 |
+| `Modules/Talkatone.sgmodule` | Talkatone 本地适配模块，不再负责节点分流 |
 | `Modules/YouTubeNoAds.sgmodule` | YouTube / YouTube Music 去广告与增强模块 |
-| `Scripts/YouTube/` | 本仓库镜像的 Maasea YouTube 脚本与许可证 |
+| `Modules/ThirdParty/` | 经许可镜像的第三方模块，统一保留上游来源与许可 |
+| `Scripts/YouTube/` | Maasea YouTube 脚本与许可证 |
+| `Scripts/ThirdParty/` | 第三方模块依赖脚本的本地镜像 |
+| `THIRD_PARTY_NOTICES.md` | 第三方来源、许可、修改范围与不镜像项目说明 |
+| `LICENSES/` | 第三方 GPL 许可证副本 |
 
 ---
+
+
+## 🧭 模块来源与维护规范
+
+本仓库把模块分为三类：
+
+- **本地维护**：针对本人的网络环境和使用习惯调整，例如本地配置、Talkatone 适配。
+- **许可镜像**：上游有明确开源许可证，保留原作者与来源后镜像到固定 Raw 地址，例如 AWAvenue、blackmatrix7 开屏去广告、fmz200 番茄小说 / 七猫小说。
+- **仅引用上游**：能找到公开代码，但未确认明确再分发许可或来源链不清晰的模块，不复制进仓库，只记录原始来源。
+
+这样做的目的不是“把别人代码变成自己的”，而是把**来源、许可、修改范围和维护责任写清楚**。完整记录见 [THIRD_PARTY_NOTICES.md](./THIRD_PARTY_NOTICES.md)。
+
+### 当前新增的第三方镜像
+
+| 模块 | 本地路径 | 上游 | 许可 |
+|---|---|---|---|
+| AWAvenue Ads Rule | `Modules/ThirdParty/AWAvenue-Ads-Rule-Shadowrocket.module` | TG-Twilight/AWAvenue-Ads-Rule | GPL-3.0 |
+| 开屏去广告 | `Modules/ThirdParty/StartupAds.sgmodule` | blackmatrix7/ios_rule_script | GPL-2.0 |
+| 番茄小说 | `Modules/ThirdParty/FanQieNovel.sgmodule` | fmz200/wool_scripts | GPL-3.0 |
+| 七猫小说 | `Modules/ThirdParty/QiMaoNovel.sgmodule` | fmz200/wool_scripts | GPL-3.0 |
+
+> 红果短剧、苹果助手、HK / UK / US Call 等 LOWERTOP 模块，以及 APP 启动页去广告 ultra+，本次不做完整镜像；原因和上游链接已写入第三方说明文件。
 
 ## ⚡ 一键导入
 
@@ -341,3 +367,11 @@ shadowrocket://install?module=https://raw.githubusercontent.com/zhangbao20-sina/
 - Talkatone 出口节点
 
 这样更容易定位问题和回退。
+
+---
+
+## ⚖️ 署名、许可与使用边界
+
+本仓库遵循以下原则：保留原作者署名和原始项目链接；遵守上游许可证；明确标注本地修改；不把公开可见等同于允许再分发；不上传私钥、凭证或订阅密钥；上游作者如对镜像、署名或使用方式有新的明确要求，以其最新要求为准。
+
+第三方模块的功能、稳定性和兼容性由实际版本决定。本仓库的“镜像”只表示保存一份可追溯副本，并不代表对第三方服务、App 或上游项目拥有任何隶属关系或官方身份。
