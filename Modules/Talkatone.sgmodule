@@ -1,0 +1,115 @@
+#!name=🆃🅾🅿🅼🅾🅳🆂 Talkatone - Local Routing
+#!icon=https://raw.githubusercontent.com/zirawell/R-Store/main/Res/Icon/App/talkatone.png
+#!desc=Talkatone 去广告模块。代理分流已完全移至本地配置 TALKATONE_NODE，本模块不再指定 PROXY / DIRECT，避免规则冲突。
+#!author=LOWERTOP / Personal optimized
+#!homepage=https://github.com/LOWERTOP/Shadowrocket-First
+
+[Rule]
+
+# =========================================================
+# Talkatone 广告相关规则
+# =========================================================
+# 仅保留广告/竞价/展示类请求。
+# 所有 Talkatone 功能域名、节点检测、PROXY / DIRECT 规则
+# 已从模块删除，统一由本地 TALKATONE_NODE 管理。
+
+DOMAIN-SUFFIX,eqt-gc.rendering.sharethrough.com,REJECT
+DOMAIN-SUFFIX,sdkc.vervegroupinc.net,REJECT
+DOMAIN-SUFFIX,api.nextgen.verve.net,REJECT
+DOMAIN-SUFFIX,smartadserver.com,REJECT
+
+DOMAIN-SUFFIX,tk0x1.com,REJECT
+DOMAIN-SUFFIX,bidswitch.net,REJECT
+DOMAIN-SUFFIX,iteleserve.com,REJECT
+DOMAIN-SUFFIX,serveteck.com,REJECT
+
+DOMAIN-SUFFIX,adrta.com,REJECT
+DOMAIN-SUFFIX,creatives.smadex.com,REJECT
+DOMAIN-SUFFIX,static-content-1.smadex.com,REJECT
+DOMAIN-SUFFIX,imp-lb-us2.jampp.com,REJECT
+DOMAIN-SUFFIX,br-trk.smadex.com,REJECT
+
+DOMAIN-SUFFIX,aax.amazon-adsystem.com,REJECT
+DOMAIN-SUFFIX,aax-fe.amazon-adsystem.com,REJECT
+DOMAIN-SUFFIX,aax-fe-sin.amazon-adsystem.com,REJECT
+DOMAIN-SUFFIX,ads.inmobi.com,REJECT
+DOMAIN-SUFFIX,ads.pubmatic.com,REJECT
+DOMAIN-SUFFIX,adsappier.com,REJECT
+DOMAIN-SUFFIX,amazon-adsystem.com,REJECT
+DOMAIN-SUFFIX,appier.net,REJECT
+DOMAIN-SUFFIX,appiersig.com,REJECT
+DOMAIN-SUFFIX,au.w.inmobi.com,REJECT
+DOMAIN-SUFFIX,b.de.inmobi.com,REJECT
+DOMAIN-SUFFIX,bidder.criteo.com,REJECT
+DOMAIN-SUFFIX,c.amazon-adsystem.com,REJECT
+DOMAIN-SUFFIX,cdn.liftoff-creatives.io,REJECT
+DOMAIN-SUFFIX,cdn.mobilefuse.com,REJECT
+DOMAIN-SUFFIX,cdn2.inner-active.mobi,REJECT
+DOMAIN-SUFFIX,cdn-f.adsmoloco.com,REJECT
+DOMAIN-SUFFIX,config.inmobi.com,REJECT
+DOMAIN-SUFFIX,cr.adsappier.com,REJECT
+DOMAIN-SUFFIX,criteo.com,REJECT
+DOMAIN-SUFFIX,dspbeacons.ihasdsp.inmobi.com,REJECT
+DOMAIN-SUFFIX,dspbeacons.old.ihasdsp.inmobi.com,REJECT
+DOMAIN-SUFFIX,et-eus.w.inmobi.com,REJECT
+DOMAIN-SUFFIX,ets-ap-southeast-1.track.smaato.net,REJECT
+DOMAIN-SUFFIX,exchange-b-events.inner-active.mobi,REJECT
+DOMAIN-SUFFIX,googleads.g.doubleclick.net,REJECT
+DOMAIN-SUFFIX,googleads.g.doubleclick-cn.net,REJECT
+DOMAIN-SUFFIX,googlesyndication.com,REJECT
+DOMAIN-SUFFIX,gum.criteo.com,REJECT
+DOMAIN-SUFFIX,i.l.inmobicdn.net,REJECT
+DOMAIN-SUFFIX,i.l-dsp.inmobicdn.net,REJECT
+DOMAIN-SUFFIX,ic.de.inmobi.com,REJECT
+DOMAIN-SUFFIX,impression.link,REJECT
+DOMAIN-SUFFIX,impression-asia.liftoff.io,REJECT
+DOMAIN-SUFFIX,ins.track.tappx.com,REJECT
+DOMAIN-SUFFIX,lh3.googleadsserving.cn,REJECT
+DOMAIN-SUFFIX,mads.amazon-adsystem.com,REJECT
+DOMAIN-SUFFIX,mfx.mobilefuse.com,REJECT
+DOMAIN-SUFFIX,mt-usw.appiersig.com,REJECT
+DOMAIN-SUFFIX,pagead2.googlesyndication-cn.com,REJECT
+DOMAIN-SUFFIX,pubmatic.com,REJECT
+DOMAIN-SUFFIX,sdk-dnt.ad.smaato.net,REJECT
+DOMAIN-SUFFIX,sdk-events.inner-active.mobi,REJECT
+DOMAIN-SUFFIX,sdk-files.smaato.net,REJECT
+DOMAIN-SUFFIX,sdk-hb-cfg.smaato.net,REJECT
+DOMAIN-SUFFIX,skadnetworks.fyber.com,REJECT
+DOMAIN-SUFFIX,smaato.net,REJECT
+DOMAIN-SUFFIX,ssp.api.tappx.com,REJECT
+DOMAIN-SUFFIX,supply.inmobicdn.net,REJECT
+DOMAIN-SUFFIX,taboola.com,REJECT
+DOMAIN-SUFFIX,tappx.com,REJECT
+DOMAIN-SUFFIX,tpc.googlesyndication-cn.com,REJECT
+DOMAIN-SUFFIX,tr-asia.adsmoloco.com,REJECT
+DOMAIN-SUFFIX,vst.c.appier.net,REJECT
+DOMAIN-SUFFIX,wv.inner-active.mobi,REJECT
+DOMAIN-SUFFIX,www.googletagservices-cn.com,REJECT
+
+# =========================================================
+# 有意删除的原模块内容
+# =========================================================
+#
+# 1. 删除所有节点参数：
+#    节点检测 / 代理分流
+#
+# 2. 删除功能分流：
+#    xmpp*.tktn.be
+#    tktn.at
+#    tktn.be
+#    vm.talkatone.com
+#    tenor.com
+#
+# 3. 删除原模块中的 DIRECT 功能规则和 Talkatone IP 段，
+#    这些全部交给本地 TALKATONE_NODE。
+#
+# 4. 删除以下可能影响应用功能或其它 App 的共享服务阻断：
+#    firebaseinstallations.googleapis.com
+#    firebaselogging-pa.googleapis.com
+#    firebaseremoteconfig.googleapis.com
+#    firebase-settings.crashlytics.com
+#    fundingchoicesmessages.google.com
+#    ep7.facebook.com
+#    view.adjust.com
+#
+# 5. 不启用 URL Rewrite / MITM。
