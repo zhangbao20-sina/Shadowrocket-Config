@@ -1,4 +1,6 @@
 #!name=🆃🅾🅿🅼🅾🅳🆂 Talkatone - Local Routing
+#!url=https://raw.githubusercontent.com/zhangbao20-sina/Shadowrocket-Config/main/Modules/Talkatone.sgmodule
+#!update-url=https://raw.githubusercontent.com/zhangbao20-sina/Shadowrocket-Config/main/Modules/Talkatone.sgmodule
 #!icon=https://raw.githubusercontent.com/zirawell/R-Store/main/Res/Icon/App/talkatone.png
 #!desc=Talkatone 去广告模块。代理分流已完全移至本地配置 TALKATONE_NODE，本模块不再指定 PROXY / DIRECT，避免规则冲突。
 #!author=LOWERTOP / Personal optimized
