@@ -54,7 +54,17 @@
 
 上游：https://github.com/LOWERTOP/Shadowrocket-First
 
-当前仓库中的 `Modules/Talkatone.sgmodule` 是此前已经存在的本地适配版本；应继续保留对 LOWERTOP 的来源说明，并在后续确认授权范围后再决定是否扩大镜像。
+`Modules/Talkatone.sgmodule` 当前按 **Talkatone Local** 个人维护版本管理，模块本身不再展示第三方品牌式标题或作者字段。由于该文件的历史演变曾参考公开规则项目，本说明文件继续保留来源链记录，仅用于著作权与维护可追溯性，不代表当前模块是第三方官方镜像。
+
+### Talkatone Local — 本地独立维护
+
+- 本地位置：`Modules/Talkatone.sgmodule`
+- 维护者：`zhangbao20-sina`
+- 性质：个人维护适配版。
+- 当前结构：模块只负责广告相关规则；Talkatone 功能域名、业务分流和 IP 段统一交由本地配置 `TALKATONE_NODE`。
+- 不使用：MITM、URL Rewrite、响应改写。
+- 兼容策略：不阻断 Firebase、Crashlytics、Adjust 等共享服务，减少对登录、推送、通话或其它 App 的潜在影响。
+- 历史来源链：该模块早期版本曾参考 LOWERTOP/Shadowrocket-First 的 Talkatone 公开规则；本条仅用于来源可追溯，不作为当前模块的作者展示信息。
 
 ### 红果短剧 Local — 本地独立维护
 
