@@ -1,0 +1,43 @@
+#!url=https://raw.githubusercontent.com/zhangbao20-sina/Shadowrocket-Config/main/Modules/HongGuo-Local.sgmodule
+#!update-url=https://raw.githubusercontent.com/zhangbao20-sina/Shadowrocket-Config/main/Modules/HongGuo-Local.sgmodule
+#!name=红果短剧 - Local
+#!desc=红果短剧部分广告拦截与兼容放行｜个人维护版
+#!author=zhangbao20-sina
+#!homepage=https://github.com/zhangbao20-sina/Shadowrocket-Config
+#!version=2026.09.22
+
+# 本模块为个人维护适配版本，并非任何第三方项目的官方镜像。
+# 规则参考与核对来源：
+# - LOWERTOP/Shadowrocket-First/HongGuo.module
+# - TG-Twilight/AWAvenue-Ads-Rule
+# - v2fly/domain-list-community
+# - 其他公开广告规则中的同类域名记录
+#
+# 设计原则：
+# - 不使用 MITM、脚本或响应改写
+# - 只保留高置信度广告/广告资源域名
+# - 保留 p3-ad-sign.byteimg.com 精确 DIRECT 例外，避免误伤相关图片资源
+# - 采用 REJECT 而非 REJECT-DROP，降低应用等待/重试带来的兼容性影响
+#
+# 说明：
+# 当前 LOWERTOP 主分支还包含 v11-reading-video.qznovelvod.com。
+# 本地版暂不启用该条，因独立公开来源中的交叉验证不足，先以稳定为优先。
+
+[Rule]
+
+# =========================
+# 兼容放行
+# =========================
+
+# 精确放行必须位于后续 *-ad-sign.byteimg.com 通配拦截之前
+DOMAIN,p3-ad-sign.byteimg.com,DIRECT
+
+# =========================
+# 红果短剧广告资源
+# =========================
+
+DOMAIN-WILDCARD,*-misc-lq.fqnovel.com,REJECT
+DOMAIN-WILDCARD,*-reading-ad.qznovelvod.com,REJECT
+DOMAIN-WILDCARD,*-ad-sign.byteimg.com,REJECT
+DOMAIN-WILDCARD,*-iosreadingvideo.qznovelvod.com,REJECT
+DOMAIN-WILDCARD,ads*-normal-l*.zijieapi.com,REJECT
