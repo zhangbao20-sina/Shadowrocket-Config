@@ -48,6 +48,11 @@
     <img src="https://img.shields.io/badge/一键安装-高德地图开屏去广告-1677FF?style=for-the-badge&logo=rocket&logoColor=white" alt="一键安装 高德地图开屏去广告">
   </a>
 
+  <br><br>
+  <a href="#-米家去广告">
+    <img src="https://img.shields.io/badge/米家去广告-选择版本-00BFA5?style=for-the-badge&logo=rocket&logoColor=white" alt="米家去广告：选择仅去开屏版或源模块版">
+  </a>
+
 </p>
 
 ## 🧩 可安装内容
@@ -401,6 +406,65 @@ shadowrocket://install?module=https://raw.githubusercontent.com/zhangbao20-sina/
 
 ---
 
+### 🏠 米家去广告
+
+两个版本按需选择，**只启用其中一个**。
+
+- **仅去开屏版**：只处理普通开屏、实时开屏广告接口。
+- **源模块版**：保留上游全部规则，包含开屏、横幅、轮播、`myTab` 推荐接口及小米广告 SDK 域名拦截。
+
+[![安装_米家仅去开屏版](https://img.shields.io/badge/打开_Shadowrocket-%E5%AE%89%E8%A3%85_%E7%B1%B3%E5%AE%B6%E4%BB%85%E5%8E%BB%E5%BC%80%E5%B1%8F%E7%89%88-00BFA5?style=for-the-badge)](https://lowertop.github.io/Shadowrocket-First/redirect.html?url=shadowrocket%3A%2F%2Finstall%3Fmodule%3Dhttps%3A%2F%2Fraw.githubusercontent.com%2Fzhangbao20-sina%2FShadowrocket-Config%2Fmain%2FModules%2FMijia-Splash.sgmodule)
+
+[![安装_米家源模块版](https://img.shields.io/badge/打开_Shadowrocket-%E5%AE%89%E8%A3%85_%E7%B1%B3%E5%AE%B6%E6%BA%90%E6%A8%A1%E5%9D%97%E7%89%88-00BFA5?style=for-the-badge)](https://lowertop.github.io/Shadowrocket-First/redirect.html?url=shadowrocket%3A%2F%2Finstall%3Fmodule%3Dhttps%3A%2F%2Fraw.githubusercontent.com%2Fzhangbao20-sina%2FShadowrocket-Config%2Fmain%2FModules%2FThirdParty%2FMijia.sgmodule)
+
+<details>
+<summary><strong>查看使用方法、两个版本地址与更新说明</strong></summary>
+
+**使用方法**
+
+1. 使用 Safari 点击对应安装按钮，允许打开 Shadowrocket；跳转失败时复制对应 Raw 地址到「配置 → 模块 → ＋」下载。
+2. 启用所选模块及 HTTPS 解密，安装并信任本机生成的证书。两个版本都只追加 `home.mi.com` 解密主机，无 JavaScript 依赖。
+3. 切换版本时先停用另一个版本；完全退出米家后重新打开，已有广告缓存可通过 App 自带清理缓存功能处理。
+
+**版本差异**
+
+仅去开屏版由本仓库精简维护，保留两个 `openingBanner` 接口并补充路径边界，不包含其他推广过滤或 SDK 域名拦截。
+
+源模块版镜像 [奶思 / fmz200 上游模块](https://github.com/fmz200/wool_scripts/blob/main/Shadowrocket/module/split/partM/Mijia.srmodule)，规则主体保持原样；仅区分模块名称并添加本仓库更新地址与许可说明。其中 `sdkconfig.ad.xiaomi.com` 属于小米广告 SDK 域名，规则并不限定只对米家生效。
+
+**仅去开屏版 Raw / 更新地址**
+
+```text
+https://raw.githubusercontent.com/zhangbao20-sina/Shadowrocket-Config/main/Modules/Mijia-Splash.sgmodule
+```
+
+**源模块版 Raw / 更新地址**
+
+```text
+https://raw.githubusercontent.com/zhangbao20-sina/Shadowrocket-Config/main/Modules/ThirdParty/Mijia.sgmodule
+```
+
+在 Shadowrocket 中更新已安装的远程模块即可同步本仓库对应版本；源模块版是本仓库维护的上游快照，不会绕过本仓库自动追随上游变化。
+
+**原生 URL Scheme（依次为仅去开屏版、源模块版）**
+
+```text
+shadowrocket://install?module=https://raw.githubusercontent.com/zhangbao20-sina/Shadowrocket-Config/main/Modules/Mijia-Splash.sgmodule
+shadowrocket://install?module=https://raw.githubusercontent.com/zhangbao20-sina/Shadowrocket-Config/main/Modules/ThirdParty/Mijia.sgmodule
+```
+
+**验证状态**
+
+使用者当前版本：米家 **11.8.203（build 11.8.203.304）**。已核对源模块规则一致性与精简版 URL 匹配范围，尚未完成该版本手机实测，不保证启动耗时缩短。
+
+实测重点：开屏是否消失、设备列表与设备控制、自动化及消息提醒是否正常；源模块版另检查页面推广过滤效果。
+
+来源与修改记录见 [THIRD_PARTY_NOTICES.md](./THIRD_PARTY_NOTICES.md)。
+
+</details>
+
+---
+
 <details>
 <summary><strong>📖 仓库说明（维护、许可、安全与目录，点击展开）</strong></summary>
 
@@ -450,6 +514,7 @@ ca-passphrase
 - `Modules/ThirdParty/StartupAds.sgmodule` → blackmatrix7/ios_rule_script → GPL-2.0
 - `Modules/ThirdParty/FanQieNovel.sgmodule` → fmz200/wool_scripts → GPL-3.0
 - `Modules/ThirdParty/QiMaoNovel.sgmodule` → fmz200/wool_scripts → GPL-3.0
+- `Modules/ThirdParty/Mijia.sgmodule` → fmz200/wool_scripts → GPL-3.0
 
 完整来源、修改范围与许可证记录见 [THIRD_PARTY_NOTICES.md](./THIRD_PARTY_NOTICES.md)。
 
@@ -472,6 +537,7 @@ Shadowrocket-Config/
 │   ├── HongGuo-Local.sgmodule
 │   ├── Xianyu-Local.sgmodule
 │   ├── Amap-Local.sgmodule
+│   ├── Mijia-Splash.sgmodule
 │   └── ThirdParty/
 ├── Scripts/
 │   ├── YouTube/

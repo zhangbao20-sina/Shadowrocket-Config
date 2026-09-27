@@ -106,6 +106,16 @@ GitHub 上存在多个转存或修订副本，常见头部指向 whatshub / yfam
 
 以上不是 iOS / Shadowrocket / 实际 App 的端到端验证；开屏缓存、App 接口版本及启动耗时仍待设备实测。
 
+## 米家 — 仅去开屏版 / 源模块版（2026-09-27）
+
+- 上游作者：奶思；项目：[fmz200/wool_scripts](https://github.com/fmz200/wool_scripts)。
+- 上游文件：[Mijia.srmodule](https://github.com/fmz200/wool_scripts/blob/main/Shadowrocket/module/split/partM/Mijia.srmodule)，blob `42ca586b374d50502b8ef17a974a3433bf75a772`。
+- 许可：GPL-3.0，许可证副本：`LICENSES/GPL-3.0.txt`。
+- 源模块版：`Modules/ThirdParty/Mijia.sgmodule`。所有规则段保持上游原样，仅调整显示名称并添加本仓库固定更新地址、镜像与许可说明；保留原作者及上游元数据。
+- 仅去开屏版：`Modules/Mijia-Splash.sgmodule`。从上游精简，只保留普通、实时两个开屏接口及 MITM 主机；为接口添加路径边界，移除其他推荐过滤及广告 SDK 域名拦截。精简修改按 GPL-3.0 发布。
+- 两版均无脚本依赖，README 在同一米家介绍栏提供不同安装入口。二选一启用。
+- 验证：源版规则段一致性、精简版 URL 正反例及链接目标静态检查；米家 11.8.203（build 11.8.203.304）手机效果和启动耗时待实测。
+
 ## 免责声明
 
 模块和规则可能因为 App 接口、广告 SDK、Shadowrocket 版本或上游脚本更新而失效。启用 MITM 的模块应只添加必要域名，并由使用者自行安装和信任本机证书。对来源不明的脚本，不应仅因“别人能用”就直接纳入长期配置。

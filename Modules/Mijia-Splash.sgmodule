@@ -1,0 +1,15 @@
+#!name=米家 · 仅去开屏
+#!desc=仅处理已知普通与实时开屏广告接口；需启用 HTTPS 解密并信任本机证书。与源模块版二选一启用。
+#!author=zhangbao20-sina（基于奶思 / fmz200/wool_scripts 精简）
+#!homepage=https://github.com/zhangbao20-sina/Shadowrocket-Config
+#!url=https://raw.githubusercontent.com/zhangbao20-sina/Shadowrocket-Config/main/Modules/Mijia-Splash.sgmodule
+#!update-url=https://raw.githubusercontent.com/zhangbao20-sina/Shadowrocket-Config/main/Modules/Mijia-Splash.sgmodule
+# 来源：https://github.com/fmz200/wool_scripts/blob/main/Shadowrocket/module/split/partM/Mijia.srmodule
+# GPL-3.0，见 LICENSES/GPL-3.0.txt；2026-09-27 精简为两个开屏接口并补充路径边界。
+
+[Map Local]
+^https?:\/\/home\.mi\.com\/cgi-op\/api\/v1\/recommendation\/openingBanner(?:\/|\?|$) data-type=text data="{}" header="Content-Type:application/json"
+^https?:\/\/home\.mi\.com\/cgi-op\/api\/v1\/resource\/realtime\/openingBanner(?:\/|\?|$) data-type=text data="{}" header="Content-Type:application/json"
+
+[MITM]
+hostname = %APPEND% home.mi.com

@@ -1,0 +1,23 @@
+#!name=米家 · 源模块版
+#!desc=某些APP要清除缓存或者重新安装拦截广告才会生效！
+#!author=奶思
+#!category=奶思的模块
+#!homepage=https://github.com/fmz200/wool_scripts
+#!raw-url=https://github.com/fmz200/wool_scripts/raw/main/Shadowrocket/module/split/partM/Mijia.srmodule
+#!tg-channel=https://t.me/inaisi
+
+# 本仓库许可镜像；规则主体保持上游原样。GPL-3.0，见 LICENSES/GPL-3.0.txt。
+#!url=https://raw.githubusercontent.com/zhangbao20-sina/Shadowrocket-Config/main/Modules/ThirdParty/Mijia.sgmodule
+#!update-url=https://raw.githubusercontent.com/zhangbao20-sina/Shadowrocket-Config/main/Modules/ThirdParty/Mijia.sgmodule
+
+[Rule]
+DOMAIN,sdkconfig.ad.xiaomi.com,REJECT
+
+[Map Local]
+^https?:\/\/home\.mi\.com\/cgi-op\/api\/v1\/recommendation\/(banner|carousel\/banners|myTab|openingBanner) data-type=text data="{}" header="Content-Type:application/json"
+
+^https?:\/\/home\.mi\.com\/cgi-op\/api\/v1\/resource\/realtime\/openingBanner data-type=text data="{}" header="Content-Type:application/json"
+
+[MITM]
+hostname = %APPEND% home.mi.com
+
