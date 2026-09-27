@@ -41,11 +41,6 @@
 
 </p>
 
-> **README 维护约定**  
-> 以后新增任何正式可安装配置 / 模块时，都必须同步加入：顶部快速安装、独立模块说明、固定 Raw 地址与远程更新说明。移动端继续坚持“少表格、短段落、长地址折叠、操作按钮单列”的排版规则。
-
----
-
 ## 🧩 可安装内容
 
 ### 📦 完整配置
@@ -72,7 +67,7 @@ shadowrocket://config/add/https://raw.githubusercontent.com/zhangbao20-sina/Shad
 </details>
 
 <details>
-<summary><strong>📱 完整配置使用说明（点击展开）</strong></summary>
+<summary><strong>📱 完整配置：使用、更新与分流说明（点击展开）</strong></summary>
 
 导入完整配置后：
 
@@ -82,8 +77,59 @@ shadowrocket://config/add/https://raw.githubusercontent.com/zhangbao20-sina/Shad
 4. 在代理分组中分别为 YouTube、Gemini、TikTok、Talkatone、Google Maps 手动选择节点。
 5. Yahoo 保持自动测速台湾节点，无需手动指定。
 
-> 模块可以按需单独安装；不需要的模块不要开启。  
-> 如果某个 App 出现异常，优先一次只停用一个模块进行排查。
+### 远程更新
+
+在 Shadowrocket 中更新已导入的完整配置，固定地址为：
+
+```text
+update-url = https://raw.githubusercontent.com/zhangbao20-sina/Shadowrocket-Config/main/Config/Shadowrocket.conf
+```
+
+### 策略组
+
+YouTube、Gemini、TikTok、Talkatone、Google Maps 使用独立 `select` 策略组，避免节点改名或同名节点抢先匹配。
+
+Yahoo 保留 `url-test` 自动选择台湾节点。
+
+### Gemini
+
+Gemini 使用更精确的 AI 服务域名匹配，不再把整个 `googleapis.com` 或 `gstatic.com` 纳入 Gemini 专用策略。
+
+**Gemini 精确域名示例**
+
+```text
+gemini.google.com
+aistudio.google.com
+ai.google.dev
+generativelanguage.googleapis.com
+gemini-pa.googleapis.com
+alkaliminer-pa.googleapis.com
+proactivebackend-pa.googleapis.com
+aida.googleapis.com
+```
+
+
+### DNS
+
+当前继续维持既有 DNS 方案，不因 YouTube 或其他模块调整 DNS，减少同时修改多个变量导致的排障困难。
+
+### UDP / 443
+
+当前继续保留：
+
+```text
+AND,((PROTOCOL,UDP),(DEST-PORT,443)),REJECT-NO-DROP
+```
+
+本地规则仍处于实际使用测试阶段，因此暂不同时调整 QUIC / HTTP3 行为。
+
+### 当前分流测试重点
+
+- Gemini 网页与 App / Google AI Studio
+- YouTube、Talkatone、Google Maps、TikTok 的业务分流
+- Yahoo Mail 台湾节点自动选择
+
+这是个人使用配置，默认行为根据本人的网络环境、使用习惯和实际测试结果优化，并不以通用公共规则集为目标。
 
 </details>
 
@@ -112,6 +158,17 @@ shadowrocket://install?module=https://raw.githubusercontent.com/zhangbao20-sina/
 
 该模块为本仓库个人维护版本。  
 业务分流统一由本地配置中的 `TALKATONE_NODE` 管理；模块仅保留广告相关规则。
+
+**远程更新**
+
+在 Shadowrocket 中更新已安装的该模块，固定更新地址如下：
+
+```text
+#!url=https://raw.githubusercontent.com/zhangbao20-sina/Shadowrocket-Config/main/Modules/Talkatone.sgmodule
+#!update-url=https://raw.githubusercontent.com/zhangbao20-sina/Shadowrocket-Config/main/Modules/Talkatone.sgmodule
+```
+
+**当前测试重点**：广告拦截，以及登录、短信与通话是否正常。
 
 </details>
 
@@ -147,6 +204,17 @@ https://raw.githubusercontent.com/zhangbao20-sina/Shadowrocket-Config/main/Scrip
 
 上游为 `Maasea/sgmodule`，本地镜像保留 Apache-2.0 许可证。
 
+**远程更新**
+
+在 Shadowrocket 中更新已安装的该模块，固定更新地址如下：
+
+```text
+#!url=https://raw.githubusercontent.com/zhangbao20-sina/Shadowrocket-Config/main/Modules/YouTubeNoAds.sgmodule
+#!update-url=https://raw.githubusercontent.com/zhangbao20-sina/Shadowrocket-Config/main/Modules/YouTubeNoAds.sgmodule
+```
+
+**当前测试重点**：去广告效果及 YouTube / YouTube Music 播放是否正常。
+
 </details>
 
 ---
@@ -175,6 +243,17 @@ shadowrocket://install?module=https://raw.githubusercontent.com/zhangbao20-sina/
 该模块为本仓库独立维护版本，不是 LOWERTOP 原文件的官方镜像。  
 公开参考来源、规则取舍与署名说明记录在 `THIRD_PARTY_NOTICES.md`。
 
+**远程更新**
+
+在 Shadowrocket 中更新已安装的该模块，固定更新地址如下：
+
+```text
+#!url=https://raw.githubusercontent.com/zhangbao20-sina/Shadowrocket-Config/main/Modules/HongGuo-Local.sgmodule
+#!update-url=https://raw.githubusercontent.com/zhangbao20-sina/Shadowrocket-Config/main/Modules/HongGuo-Local.sgmodule
+```
+
+**当前测试重点**：广告拦截与视频播放是否正常。
+
 </details>
 
 ---
@@ -190,12 +269,12 @@ shadowrocket://install?module=https://raw.githubusercontent.com/zhangbao20-sina/
 - **恢复位置：** [添加「wloc 清理恢复位置」快捷指令](https://www.icloud.com/shortcuts/704652bc2ad14dbc8f1e14501a3af5e3)
 - **完整说明及其他客户端：** [查看 WLOC 项目文档](https://github.com/meyifan20-icloud/wloc#订阅地址)
 
+<details>
+<summary><strong>查看使用方法、兼容性、Raw 地址与更新说明</strong></summary>
+
 先在设备上安装并信任自己生成的 Shadowrocket HTTPS 解密证书，启用 WLOC 模块及 HTTPS 解密；再到选址页面选择位置并点击「储存到设备」。模块会追加所需的精确解密主机名。
 
 > 系统兼容性限制以 [WLOC 当前说明](https://github.com/meyifan20-icloud/wloc#apple-wloc-定位修改) 为准；不保证所有 iOS 版本均可使用。这里只汇总入口，模块和脚本继续由 WLOC 原仓库维护。
-
-<details>
-<summary><strong>查看 Raw 地址、Scheme 与远程更新说明</strong></summary>
 
 **Raw**
 
@@ -216,100 +295,19 @@ shadowrocket://install?module=https%3A%2F%2Fraw.githubusercontent.com%2Fmeyifan2
 ---
 
 <details>
-<summary><strong>📖 详细说明（更新、配置、安全、测试、许可与维护，点击展开）</strong></summary>
+<summary><strong>📖 仓库说明（维护、许可、安全与目录，点击展开）</strong></summary>
 
-## 🔄 远程更新
+## 维护与更新约定
 
-仓库中的正式配置和本地维护模块均使用固定 Raw 地址。以后继续更新 `main` 分支中的同一路径，手机端无需重新寻找安装链接。
+仓库中的正式配置和本地维护模块均使用固定 Raw 地址。以后继续更新 `main` 分支中的同一路径，手机端无需重新寻找安装链接。具体更新地址和方法见各配置、模块自己的折叠说明；WLOC 由其原仓库独立维护。
 
-<details>
-<summary><strong>查看各项目更新地址</strong></summary>
+> 模块可以按需单独安装；不需要的模块不要开启。  
+> 如果某个 App 出现异常，优先一次只停用一个模块进行排查。
 
-**完整配置**
+> **README 维护约定**  
+> 以后新增任何正式可安装配置 / 模块时，都必须同步加入：顶部快速安装、独立模块说明、固定 Raw 地址与远程更新说明。移动端继续坚持“少表格、短段落、长地址折叠、操作按钮单列”的排版规则。
 
-```text
-update-url = https://raw.githubusercontent.com/zhangbao20-sina/Shadowrocket-Config/main/Config/Shadowrocket.conf
-```
-
-**Talkatone**
-
-```text
-#!url=https://raw.githubusercontent.com/zhangbao20-sina/Shadowrocket-Config/main/Modules/Talkatone.sgmodule
-#!update-url=https://raw.githubusercontent.com/zhangbao20-sina/Shadowrocket-Config/main/Modules/Talkatone.sgmodule
-```
-
-**YouTubeNoAds**
-
-```text
-#!url=https://raw.githubusercontent.com/zhangbao20-sina/Shadowrocket-Config/main/Modules/YouTubeNoAds.sgmodule
-#!update-url=https://raw.githubusercontent.com/zhangbao20-sina/Shadowrocket-Config/main/Modules/YouTubeNoAds.sgmodule
-```
-
-**红果短剧 Local**
-
-```text
-#!url=https://raw.githubusercontent.com/zhangbao20-sina/Shadowrocket-Config/main/Modules/HongGuo-Local.sgmodule
-#!update-url=https://raw.githubusercontent.com/zhangbao20-sina/Shadowrocket-Config/main/Modules/HongGuo-Local.sgmodule
-```
-
-**WLOC（关联项目）**
-
-```text
-https://raw.githubusercontent.com/meyifan20-icloud/wloc/main/modules/wloc.module
-```
-
-在 Shadowrocket 中更新已安装的 WLOC 远程模块；维护源为 `meyifan20-icloud/wloc`，不随本仓库主配置更新。
-
-
-</details>
-
-> 远程更新依赖公开 Raw 地址。不要把 MITM 私钥、账户密码、订阅密钥或其他敏感信息提交到公开仓库。
-
----
-
-## ⚙️ 配置说明
-
-### 策略组
-
-YouTube、Gemini、TikTok、Talkatone、Google Maps 使用独立 `select` 策略组，避免节点改名或同名节点抢先匹配。
-
-Yahoo 保留 `url-test` 自动选择台湾节点。
-
-### Gemini
-
-Gemini 使用更精确的 AI 服务域名匹配，不再把整个 `googleapis.com` 或 `gstatic.com` 纳入 Gemini 专用策略。
-
-<details>
-<summary><strong>查看 Gemini 精确域名示例</strong></summary>
-
-```text
-gemini.google.com
-aistudio.google.com
-ai.google.dev
-generativelanguage.googleapis.com
-gemini-pa.googleapis.com
-alkaliminer-pa.googleapis.com
-proactivebackend-pa.googleapis.com
-aida.googleapis.com
-```
-
-</details>
-
-### DNS
-
-当前继续维持既有 DNS 方案，不因 YouTube 或其他模块调整 DNS，减少同时修改多个变量导致的排障困难。
-
-### UDP / 443
-
-当前继续保留：
-
-```text
-AND,((PROTOCOL,UDP),(DEST-PORT,443)),REJECT-NO-DROP
-```
-
-本地规则仍处于实际使用测试阶段，因此暂不同时调整 QUIC / HTTP3 行为。
-
----
+远程更新依赖公开 Raw 地址。不要把 MITM 私钥、账户密码、订阅密钥或其他敏感信息提交到公开仓库。
 
 ## 🛡️ 安全说明
 
@@ -321,17 +319,6 @@ ca-passphrase
 ```
 
 仓库配置可以保留 MITM 功能设置，但私钥证书应始终由个人设备本地生成、安装和保管。
-
----
-
-## 🧪 当前测试重点
-
-- Gemini 网页与 App / Google AI Studio
-- YouTube 播放与 YouTubeNoAds
-- Talkatone 登录、短信与通话
-- 红果短剧广告拦截与视频播放
-- Google Maps / TikTok
-- Yahoo Mail 台湾节点自动选择
 
 ---
 
@@ -390,8 +377,6 @@ Shadowrocket-Config/
 ---
 
 ## ⚖️ 使用与维护说明
-
-这是个人使用配置，默认行为根据本人的网络环境、使用习惯和实际测试结果优化，并不以通用公共规则集为目标。
 
 第三方代码的作者身份、著作权与许可归各自项目所有。本仓库的整理、镜像或兼容修改不改变原作者身份，也不代表与对应 App、服务或上游项目存在官方隶属关系。
 
