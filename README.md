@@ -37,6 +37,11 @@
   <a href="https://lowertop.github.io/Shadowrocket-First/redirect.html?url=shadowrocket%3A%2F%2Finstall%3Fmodule%3Dhttps%3A%2F%2Fraw.githubusercontent.com%2Fzhangbao20-sina%2FShadowrocket-Config%2Fmain%2FModules%2FHongGuo-Local.sgmodule">
     <img src="https://img.shields.io/badge/一键安装-红果短剧_Local-EF4444?style=for-the-badge&logo=rocket&logoColor=white" alt="一键安装 红果短剧 Local">
   </a>
+  <br><br>
+  <a href="https://d.a.us.ci/install/shadowrocket">
+    <img src="https://img.shields.io/badge/一键安装-WLOC_定位修改-8B5CF6?style=for-the-badge&logo=rocket&logoColor=white" alt="一键安装 WLOC 定位修改">
+  </a>
+
 </p>
 
 > **README 维护约定**  
@@ -161,6 +166,42 @@ shadowrocket://install?module=https://raw.githubusercontent.com/zhangbao20-sina/
 
 ---
 
+### 📍 WLOC 定位修改
+
+关联个人项目 [meyifan20-icloud/wloc](https://github.com/meyifan20-icloud/wloc)，修改 Apple Wi-Fi / 基站网络定位返回的坐标，不修改 GPS 硬件定位。
+
+[![安装 WLOC](https://img.shields.io/badge/打开_Shadowrocket-安装_WLOC-8B5CF6?style=for-the-badge)](https://d.a.us.ci/install/shadowrocket)
+
+- **在线选址：** [打开 WLOC 地图选点页面](https://d.a.us.ci/)
+- **设置位置：** [添加「wloc 设置地理位置」快捷指令](https://www.icloud.com/shortcuts/1f7d9f66a0b94e9ea27dfe8564a419ca)
+- **恢复位置：** [添加「wloc 清理恢复位置」快捷指令](https://www.icloud.com/shortcuts/704652bc2ad14dbc8f1e14501a3af5e3)
+- **完整说明及其他客户端：** [查看 WLOC 项目文档](https://github.com/meyifan20-icloud/wloc#订阅地址)
+
+先在设备上安装并信任自己生成的 Shadowrocket HTTPS 解密证书，启用 WLOC 模块及 HTTPS 解密；再到选址页面选择位置并点击「储存到设备」。模块会追加所需的精确解密主机名。
+
+> 系统兼容性限制以 [WLOC 当前说明](https://github.com/meyifan20-icloud/wloc#apple-wloc-定位修改) 为准；不保证所有 iOS 版本均可使用。这里只汇总入口，模块和脚本继续由 WLOC 原仓库维护。
+
+<details>
+<summary><strong>查看 Raw 地址、Scheme 与远程更新说明</strong></summary>
+
+**Raw**
+
+```text
+https://raw.githubusercontent.com/meyifan20-icloud/wloc/main/modules/wloc.module
+```
+
+**Shadowrocket URL Scheme**
+
+```text
+shadowrocket://install?module=https%3A%2F%2Fraw.githubusercontent.com%2Fmeyifan20-icloud%2Fwloc%2Fmain%2Fmodules%2Fwloc.module
+```
+
+安装入口使用自定义域名 `d.a.us.ci`，远程模块及其脚本来自 `meyifan20-icloud/wloc`。在 Shadowrocket 中更新该远程模块即可拉取原仓库更新，无需复制到本仓库另行维护。
+
+</details>
+
+---
+
 ## 📱 使用说明
 
 导入完整配置后：
@@ -209,6 +250,15 @@ update-url = https://raw.githubusercontent.com/zhangbao20-sina/Shadowrocket-Conf
 #!url=https://raw.githubusercontent.com/zhangbao20-sina/Shadowrocket-Config/main/Modules/HongGuo-Local.sgmodule
 #!update-url=https://raw.githubusercontent.com/zhangbao20-sina/Shadowrocket-Config/main/Modules/HongGuo-Local.sgmodule
 ```
+
+**WLOC（关联项目）**
+
+```text
+https://raw.githubusercontent.com/meyifan20-icloud/wloc/main/modules/wloc.module
+```
+
+在 Shadowrocket 中更新已安装的 WLOC 远程模块；维护源为 `meyifan20-icloud/wloc`，不随本仓库主配置更新。
+
 
 </details>
 
