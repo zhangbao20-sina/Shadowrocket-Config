@@ -15,45 +15,21 @@
 
 ## 🚀 快速安装
 
-> 建议在 iPhone / iPad 上使用 Safari 打开本页并点击按钮。  
-> 为适配移动端，按钮采用单列布局，避免横向挤压和误触。
+> iPhone / iPad 请使用 Safari 点击安装；米家两个版本只启用其中一个。
 
-<p align="center">
-  <a href="https://lowertop.github.io/Shadowrocket-First/redirect.html?url=shadowrocket%3A%2F%2Fconfig%2Fadd%2Fhttps%3A%2F%2Fraw.githubusercontent.com%2Fzhangbao20-sina%2FShadowrocket-Config%2Fmain%2FConfig%2FShadowrocket.conf">
-    <img src="https://img.shields.io/badge/一键导入-完整配置-1677FF?style=for-the-badge&logo=rocket&logoColor=white" alt="一键导入完整配置">
-  </a>
-  <br><br>
-  <a href="https://lowertop.github.io/Shadowrocket-First/redirect.html?url=shadowrocket%3A%2F%2Finstall%3Fmodule%3Dhttps%3A%2F%2Fraw.githubusercontent.com%2Fzhangbao20-sina%2FShadowrocket-Config%2Fmain%2FModules%2FTalkatone.sgmodule">
-    <img src="https://img.shields.io/badge/一键安装-Talkatone-00A86B?style=for-the-badge&logo=rocket&logoColor=white" alt="一键安装 Talkatone">
-  </a>
-  <br><br>
-  <a href="https://lowertop.github.io/Shadowrocket-First/redirect.html?url=shadowrocket%3A%2F%2Finstall%3Fmodule%3Dhttps%3A%2F%2Fraw.githubusercontent.com%2Fzhangbao20-sina%2FShadowrocket-Config%2Fmain%2FModules%2FYouTubeNoAds.sgmodule">
-    <img src="https://img.shields.io/badge/一键安装-YouTubeNoAds-FF0000?style=for-the-badge&logo=youtube&logoColor=white" alt="一键安装 YouTubeNoAds">
-  </a>
-  <br><br>
-  <a href="https://lowertop.github.io/Shadowrocket-First/redirect.html?url=shadowrocket%3A%2F%2Finstall%3Fmodule%3Dhttps%3A%2F%2Fraw.githubusercontent.com%2Fzhangbao20-sina%2FShadowrocket-Config%2Fmain%2FModules%2FHongGuo-Local.sgmodule">
-    <img src="https://img.shields.io/badge/一键安装-红果短剧_Local-EF4444?style=for-the-badge&logo=rocket&logoColor=white" alt="一键安装 红果短剧 Local">
-  </a>
-  <br><br>
-  <a href="https://d.a.us.ci/install/shadowrocket">
-    <img src="https://img.shields.io/badge/一键安装-WLOC_定位修改-8B5CF6?style=for-the-badge&logo=rocket&logoColor=white" alt="一键安装 WLOC 定位修改">
-  </a>
-
-  <br><br>
-  <a href="https://lowertop.github.io/Shadowrocket-First/redirect.html?url=shadowrocket%3A%2F%2Finstall%3Fmodule%3Dhttps%3A%2F%2Fraw.githubusercontent.com%2Fzhangbao20-sina%2FShadowrocket-Config%2Fmain%2FModules%2FXianyu-Local.sgmodule">
-    <img src="https://img.shields.io/badge/一键安装-闲鱼去广告-F5C400?style=for-the-badge&logo=rocket&logoColor=white" alt="一键安装 闲鱼去广告">
-  </a>
-  <br><br>
-  <a href="https://lowertop.github.io/Shadowrocket-First/redirect.html?url=shadowrocket%3A%2F%2Finstall%3Fmodule%3Dhttps%3A%2F%2Fraw.githubusercontent.com%2Fzhangbao20-sina%2FShadowrocket-Config%2Fmain%2FModules%2FAmap-Local.sgmodule">
-    <img src="https://img.shields.io/badge/一键安装-高德地图开屏去广告-1677FF?style=for-the-badge&logo=rocket&logoColor=white" alt="一键安装 高德地图开屏去广告">
-  </a>
-
-  <br><br>
-  <a href="#-米家去广告">
-    <img src="https://img.shields.io/badge/米家去广告-选择版本-00BFA5?style=for-the-badge&logo=rocket&logoColor=white" alt="米家去广告：选择仅去开屏版或源模块版">
-  </a>
-
-</p>
+<table>
+<thead><tr><th align="center">图标</th><th align="left">配置 / 模块</th><th align="center">快速安装</th></tr></thead>
+<tbody>
+<tr><td align="center" valign="middle" width="40"><img src="https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/64/24/2d/64242de2-a763-914f-c686-8777445b83a3/AppIcon-0-0-1x_U007epad-0-1-0-sRGB-85-220.png/100x100bb.jpg" width="32" height="32" alt="Shadowrocket 图标"></td><td valign="middle"><strong>完整配置</strong></td><td align="center" valign="middle" width="104"><a href="https://lowertop.github.io/Shadowrocket-First/redirect.html?url=shadowrocket%3A%2F%2Fconfig%2Fadd%2Fhttps%3A%2F%2Fraw.githubusercontent.com%2Fzhangbao20-sina%2FShadowrocket-Config%2Fmain%2FConfig%2FShadowrocket.conf"><img src="https://img.shields.io/badge/%E5%AF%BC%E5%85%A5%E9%85%8D%E7%BD%AE-1677FF?style=flat-square" width="90" height="24" alt="导入配置"></a></td></tr>
+<tr><td align="center" valign="middle" width="40"><img src="https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/c3/33/85/c333851f-fd3f-29f5-663a-0321dc70f789/AppIcon-0-0-1x_U007epad-0-1-0-85-220.png/100x100bb.jpg" width="32" height="32" alt="Talkatone 图标"></td><td valign="middle"><strong>Talkatone</strong></td><td align="center" valign="middle" width="104"><a href="https://lowertop.github.io/Shadowrocket-First/redirect.html?url=shadowrocket%3A%2F%2Finstall%3Fmodule%3Dhttps%3A%2F%2Fraw.githubusercontent.com%2Fzhangbao20-sina%2FShadowrocket-Config%2Fmain%2FModules%2FTalkatone.sgmodule"><img src="https://img.shields.io/badge/%E4%B8%80%E9%94%AE%E5%AE%89%E8%A3%85-00A86B?style=flat-square" width="90" height="24" alt="一键安装"></a></td></tr>
+<tr><td align="center" valign="middle" width="40"><img src="https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/d2/86/e4/d286e49c-71ce-d6eb-72f9-e98179e862c2/logo_youtube_2024_q4_color-0-0-1x_U007emarketing-0-0-0-7-0-0-0-85-220.png/100x100bb.jpg" width="32" height="32" alt="YouTubeNoAds 图标"></td><td valign="middle"><strong>YouTubeNoAds</strong></td><td align="center" valign="middle" width="104"><a href="https://lowertop.github.io/Shadowrocket-First/redirect.html?url=shadowrocket%3A%2F%2Finstall%3Fmodule%3Dhttps%3A%2F%2Fraw.githubusercontent.com%2Fzhangbao20-sina%2FShadowrocket-Config%2Fmain%2FModules%2FYouTubeNoAds.sgmodule"><img src="https://img.shields.io/badge/%E4%B8%80%E9%94%AE%E5%AE%89%E8%A3%85-FF0000?style=flat-square" width="90" height="24" alt="一键安装"></a></td></tr>
+<tr><td align="center" valign="middle" width="40"><img src="https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/70/45/39/7045393d-09fd-bb61-122e-ed7cfbadca13/AppIcon-0-0-1x_U007emarketing-0-8-0-85-220.png/100x100bb.jpg" width="32" height="32" alt="红果短剧 图标"></td><td valign="middle"><strong>红果短剧</strong></td><td align="center" valign="middle" width="104"><a href="https://lowertop.github.io/Shadowrocket-First/redirect.html?url=shadowrocket%3A%2F%2Finstall%3Fmodule%3Dhttps%3A%2F%2Fraw.githubusercontent.com%2Fzhangbao20-sina%2FShadowrocket-Config%2Fmain%2FModules%2FHongGuo-Local.sgmodule"><img src="https://img.shields.io/badge/%E4%B8%80%E9%94%AE%E5%AE%89%E8%A3%85-EF4444?style=flat-square" width="90" height="24" alt="一键安装"></a></td></tr>
+<tr><td align="center" valign="middle" width="40">📍</td><td valign="middle"><strong>WLOC 定位</strong></td><td align="center" valign="middle" width="104"><a href="https://d.a.us.ci/install/shadowrocket"><img src="https://img.shields.io/badge/%E4%B8%80%E9%94%AE%E5%AE%89%E8%A3%85-8B5CF6?style=flat-square" width="90" height="24" alt="一键安装"></a></td></tr>
+<tr><td align="center" valign="middle" width="40"><img src="https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/10/94/6c/10946c03-0307-c6ec-d7dc-c3ee6c7dbbaf/AppIcon-0-0-1x_U007epad-0-1-0-sRGB-85-220.png/100x100bb.jpg" width="32" height="32" alt="闲鱼 图标"></td><td valign="middle"><strong>闲鱼</strong></td><td align="center" valign="middle" width="104"><a href="https://lowertop.github.io/Shadowrocket-First/redirect.html?url=shadowrocket%3A%2F%2Finstall%3Fmodule%3Dhttps%3A%2F%2Fraw.githubusercontent.com%2Fzhangbao20-sina%2FShadowrocket-Config%2Fmain%2FModules%2FXianyu-Local.sgmodule"><img src="https://img.shields.io/badge/%E4%B8%80%E9%94%AE%E5%AE%89%E8%A3%85-D4A800?style=flat-square" width="90" height="24" alt="一键安装"></a></td></tr>
+<tr><td align="center" valign="middle" width="40"><img src="https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/3d/0d/b7/3d0db700-cb0f-62e2-aa78-6e7a7341cba2/AppIcon-0-0-1x_U007epad-0-1-0-sRGB-85-220.png/100x100bb.jpg" width="32" height="32" alt="高德地图 图标"></td><td valign="middle"><strong>高德地图</strong></td><td align="center" valign="middle" width="104"><a href="https://lowertop.github.io/Shadowrocket-First/redirect.html?url=shadowrocket%3A%2F%2Finstall%3Fmodule%3Dhttps%3A%2F%2Fraw.githubusercontent.com%2Fzhangbao20-sina%2FShadowrocket-Config%2Fmain%2FModules%2FAmap-Local.sgmodule"><img src="https://img.shields.io/badge/%E4%B8%80%E9%94%AE%E5%AE%89%E8%A3%85-1677FF?style=flat-square" width="90" height="24" alt="一键安装"></a></td></tr>
+<tr><td align="center" valign="middle" width="40"><img src="https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/e3/28/c4/e328c4ce-6fb1-2cf9-39b9-3e93b61997b3/AppIcon-0-0-1x_U007emarketing-0-8-0-sRGB-0-85-220.png/100x100bb.jpg" width="32" height="32" alt="米家 图标"></td><td valign="middle"><strong>米家</strong></td><td align="center" valign="middle" width="104"><a href="https://lowertop.github.io/Shadowrocket-First/redirect.html?url=shadowrocket%3A%2F%2Finstall%3Fmodule%3Dhttps%3A%2F%2Fraw.githubusercontent.com%2Fzhangbao20-sina%2FShadowrocket-Config%2Fmain%2FModules%2FMijia-Splash.sgmodule"><img src="https://img.shields.io/badge/%E4%BB%85%E5%8E%BB%E5%BC%80%E5%B1%8F-00BFA5?style=flat-square" width="90" height="24" alt="仅去开屏"></a><br><a href="https://lowertop.github.io/Shadowrocket-First/redirect.html?url=shadowrocket%3A%2F%2Finstall%3Fmodule%3Dhttps%3A%2F%2Fraw.githubusercontent.com%2Fzhangbao20-sina%2FShadowrocket-Config%2Fmain%2FModules%2FThirdParty%2FMijia.sgmodule"><img src="https://img.shields.io/badge/%E6%BA%90%E6%A8%A1%E5%9D%97%E7%89%88-00BFA5?style=flat-square" width="90" height="24" alt="源模块版"></a></td></tr>
+</tbody>
+</table>
 
 ## 🧩 可安装内容
 
@@ -476,7 +452,7 @@ shadowrocket://install?module=https://raw.githubusercontent.com/zhangbao20-sina/
 > 如果某个 App 出现异常，优先一次只停用一个模块进行排查。
 
 > **README 维护约定**  
-> 以后新增任何正式可安装配置 / 模块时，都必须同步加入：顶部快速安装、独立模块说明、固定 Raw 地址与远程更新说明。移动端继续坚持“少表格、短段落、长地址折叠、操作按钮单列”的排版规则。
+> 以后新增任何正式可安装配置 / 模块时，都必须同步加入：顶部快速安装、独立模块说明、固定 Raw 地址与远程更新说明。快速安装统一使用紧凑三列表格，App 图标固定 32 × 32，安装按钮按列对齐；同一 App 的多个版本共用一行。详细介绍保持短段落，长地址和使用说明折叠。
 
 远程更新依赖公开 Raw 地址。不要把 MITM 私钥、账户密码、订阅密钥或其他敏感信息提交到公开仓库。
 
