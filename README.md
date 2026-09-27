@@ -39,6 +39,15 @@
     <img src="https://img.shields.io/badge/一键安装-WLOC_定位修改-8B5CF6?style=for-the-badge&logo=rocket&logoColor=white" alt="一键安装 WLOC 定位修改">
   </a>
 
+  <br><br>
+  <a href="https://lowertop.github.io/Shadowrocket-First/redirect.html?url=shadowrocket%3A%2F%2Finstall%3Fmodule%3Dhttps%3A%2F%2Fraw.githubusercontent.com%2Fzhangbao20-sina%2FShadowrocket-Config%2Fmain%2FModules%2FXianyu-Local.sgmodule">
+    <img src="https://img.shields.io/badge/一键安装-闲鱼去广告-F5C400?style=for-the-badge&logo=rocket&logoColor=white" alt="一键安装 闲鱼去广告">
+  </a>
+  <br><br>
+  <a href="https://lowertop.github.io/Shadowrocket-First/redirect.html?url=shadowrocket%3A%2F%2Finstall%3Fmodule%3Dhttps%3A%2F%2Fraw.githubusercontent.com%2Fzhangbao20-sina%2FShadowrocket-Config%2Fmain%2FModules%2FAmap-Local.sgmodule">
+    <img src="https://img.shields.io/badge/一键安装-高德地图开屏去广告-1677FF?style=for-the-badge&logo=rocket&logoColor=white" alt="一键安装 高德地图开屏去广告">
+  </a>
+
 </p>
 
 ## 🧩 可安装内容
@@ -294,6 +303,104 @@ shadowrocket://install?module=https%3A%2F%2Fraw.githubusercontent.com%2Fmeyifan2
 
 ---
 
+### 🐟 闲鱼去广告
+
+独立小火箭模块：过滤已知开屏接口及明确标记的商品信息流广告。
+
+[![安装 闲鱼去广告](https://img.shields.io/badge/打开_Shadowrocket-安装_闲鱼去广告-F5C400?style=for-the-badge)](https://lowertop.github.io/Shadowrocket-First/redirect.html?url=shadowrocket%3A%2F%2Finstall%3Fmodule%3Dhttps%3A%2F%2Fraw.githubusercontent.com%2Fzhangbao20-sina%2FShadowrocket-Config%2Fmain%2FModules%2FXianyu-Local.sgmodule)
+
+<details>
+<summary><strong>查看功能、使用方法、更新与测试说明</strong></summary>
+
+**功能范围**
+
+支持首页、同城页、搜索结果和商品推荐接口中的明确广告标记；普通商品、未知卡片、正常推荐、频道菜单和个人主页保留。
+
+仅解密 `acs.m.goofish.com`、`g-acs.m.goofish.com`。响应脚本位于本仓库 `Scripts/Xianyu/ad-filter.js`，空响应、非 JSON、错误响应和未知结构均原样放行。
+
+**启用方法**
+
+1. 在 iPhone / iPad 的 Safari 中点击安装按钮，允许打开 Shadowrocket；若跳转失败，可复制下方 Raw 地址到「配置 → 模块 → ＋」下载。
+2. 启用该模块及 HTTPS 解密，安装并信任本机生成的证书；全局路由使用「配置」。
+3. 完全退出目标 App 后重新打开。已有广告缓存可能继续显示，可先使用 App 自带的清理缓存功能后重试。
+
+每个模块可独立启停。它们不新增业务代理策略、不调整主配置的 DNS，也不覆盖现有 MITM 主机列表。同一 App 的其他去广告模块应先停用，便于判断效果。
+
+**固定 Raw / 更新地址**
+
+```text
+https://raw.githubusercontent.com/zhangbao20-sina/Shadowrocket-Config/main/Modules/Xianyu-Local.sgmodule
+```
+
+在 Shadowrocket 中更新该远程模块即可同步本仓库后续版本；如脚本仍为旧缓存，重新应用/编译当前配置以更新脚本资源。
+
+**原生 URL Scheme**
+
+```text
+shadowrocket://install?module=https://raw.githubusercontent.com/zhangbao20-sina/Shadowrocket-Config/main/Modules/Xianyu-Local.sgmodule
+```
+
+**验证状态**
+
+已完成语法及模拟响应 / URL 边界检查；尚未完成手机实测，不能保证当前 App 版本全部有效，也未测得启动速度提升。
+
+实测重点：开屏是否消失、首页与搜索商品能否正常加载、聊天、下单与付款是否正常。
+
+来源与改动记录见 [THIRD_PARTY_NOTICES.md](./THIRD_PARTY_NOTICES.md)。此为本仓库适配版，不是原作者原样模块。
+
+</details>
+
+---
+
+### 🗺️ 高德地图开屏去广告
+
+独立小火箭模块：精确处理已知开屏广告接口，采用规则返回空 JSON，无远程响应脚本。
+
+[![安装 高德地图开屏去广告](https://img.shields.io/badge/打开_Shadowrocket-安装_高德地图开屏去广告-1677FF?style=for-the-badge)](https://lowertop.github.io/Shadowrocket-First/redirect.html?url=shadowrocket%3A%2F%2Finstall%3Fmodule%3Dhttps%3A%2F%2Fraw.githubusercontent.com%2Fzhangbao20-sina%2FShadowrocket-Config%2Fmain%2FModules%2FAmap-Local.sgmodule)
+
+<details>
+<summary><strong>查看功能、使用方法、更新与测试说明</strong></summary>
+
+**功能范围**
+
+处理已知 `splash_screen` / `splash_screen_rt` 开屏请求。这一版只处理开屏，不包含上游整套界面净化。
+
+仅追加 `m5.amap.com`、`m5-zb.amap.com`、`center.amap.com`、`amap-aos-info-nogw.amap.com`、`ai.amap.com` 解密主机。不整段拦截 `valueadded` 或 `startup/init`，不修改导航、天气和定位接口，也不覆盖 WLOC 的解密主机。
+
+**启用方法**
+
+1. 在 iPhone / iPad 的 Safari 中点击安装按钮，允许打开 Shadowrocket；若跳转失败，可复制下方 Raw 地址到「配置 → 模块 → ＋」下载。
+2. 启用该模块及 HTTPS 解密，安装并信任本机生成的证书；全局路由使用「配置」。
+3. 完全退出目标 App 后重新打开。已有广告缓存可能继续显示，可先使用 App 自带的清理缓存功能后重试。
+
+每个模块可独立启停。它们不新增业务代理策略、不调整主配置的 DNS，也不覆盖现有 MITM 主机列表。同一 App 的其他去广告模块应先停用，便于判断效果。
+
+**固定 Raw / 更新地址**
+
+```text
+https://raw.githubusercontent.com/zhangbao20-sina/Shadowrocket-Config/main/Modules/Amap-Local.sgmodule
+```
+
+在 Shadowrocket 中更新该远程模块即可同步本仓库后续版本。
+
+**原生 URL Scheme**
+
+```text
+shadowrocket://install?module=https://raw.githubusercontent.com/zhangbao20-sina/Shadowrocket-Config/main/Modules/Amap-Local.sgmodule
+```
+
+**验证状态**
+
+已完成语法及模拟响应 / URL 边界检查；尚未完成手机实测，不能保证当前 App 版本全部有效，也未测得启动速度提升。
+
+实测重点：开屏是否消失、搜索与路线规划是否正常、导航和 WLOC 联动是否正常。
+
+来源与改动记录见 [THIRD_PARTY_NOTICES.md](./THIRD_PARTY_NOTICES.md)。此为本仓库适配版，不是原作者原样模块。
+
+</details>
+
+---
+
 <details>
 <summary><strong>📖 仓库说明（维护、许可、安全与目录，点击展开）</strong></summary>
 
@@ -363,11 +470,16 @@ Shadowrocket-Config/
 │   ├── Talkatone.sgmodule
 │   ├── YouTubeNoAds.sgmodule
 │   ├── HongGuo-Local.sgmodule
+│   ├── Xianyu-Local.sgmodule
+│   ├── Amap-Local.sgmodule
 │   └── ThirdParty/
 ├── Scripts/
 │   ├── YouTube/
+│   ├── Xianyu/
 │   └── ThirdParty/
 ├── LICENSES/
+├── tests/
+│   └── app-ads.test.cjs
 ├── THIRD_PARTY_NOTICES.md
 └── README.md
 ```

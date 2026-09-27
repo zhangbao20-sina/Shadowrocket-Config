@@ -1,0 +1,19 @@
+#!name=闲鱼去广告
+#!desc=开屏广告与明确标记的商品信息流广告过滤。需启用 HTTPS 解密并信任本机证书；实际效果待对应 App 版本验证。
+#!author=zhangbao20-sina（基于 fmz200/wool_scripts 适配）
+#!homepage=https://github.com/zhangbao20-sina/Shadowrocket-Config
+#!url=https://raw.githubusercontent.com/zhangbao20-sina/Shadowrocket-Config/main/Modules/Xianyu-Local.sgmodule
+#!update-url=https://raw.githubusercontent.com/zhangbao20-sina/Shadowrocket-Config/main/Modules/Xianyu-Local.sgmodule
+# 参考：fmz200/wool_scripts，GPL-3.0；修改范围见 THIRD_PARTY_NOTICES.md
+# 不改变业务分流，不清空正常推荐、搜索热词、频道菜单或个人主页。
+
+[URL Rewrite]
+# 开屏广告：仅匹配闲鱼两个业务主机上的具体接口。
+^https?:\/\/(?:g-)?acs\.m\.goofish\.com\/gw\/mtop\.taobao\.idlecommerce\.splash\.ads(?:\/|\?|$) - reject-dict
+^https?:\/\/(?:g-)?acs\.m\.goofish\.com\/gw\/mtop\.idle\.ad\.expose(?:\/|\?|$) - reject-dict
+
+[Script]
+闲鱼明确广告过滤 = type=http-response,pattern=^https?:\/\/(?:g-)?acs\.m\.goofish\.com\/gw\/(?:mtop\.taobao\.idlehome\.home\.nextfresh|mtop\.taobao\.idle\.local\.home|mtop\.taobao\.idlemtopsearch\.search|mtop\.taobao\.idle\.item\.recommend)(?:\/|\?|$),requires-body=1,max-size=1048576,timeout=5,script-path=https://raw.githubusercontent.com/zhangbao20-sina/Shadowrocket-Config/main/Scripts/Xianyu/ad-filter.js
+
+[MITM]
+hostname = %APPEND% acs.m.goofish.com, g-acs.m.goofish.com

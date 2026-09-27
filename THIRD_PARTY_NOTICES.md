@@ -80,6 +80,32 @@
 ### APP 启动页去广告 ultra+
 GitHub 上存在多个转存或修订副本，常见头部指向 whatshub / yfamilys 等站点，但本次没有确认到稳定、明确许可的原始 GitHub 上游，因此不复制到本仓库。这样做是为了避免把第三方转存再次当作“原作者代码”传播。
 
+## 闲鱼 / 高德 — 单 App 适配模块（2026-09-27）
+
+- 本地模块：`Modules/Xianyu-Local.sgmodule`、`Modules/Amap-Local.sgmodule`。
+- 本地脚本：`Scripts/Xianyu/ad-filter.js`；高德模块无远程脚本依赖。
+- 主要来源：[fmz200/wool_scripts](https://github.com/fmz200/wool_scripts)，GPL-3.0，许可证副本沿用 `LICENSES/GPL-3.0.txt`。
+- 闲鱼模块参考：`Shadowrocket/module/split/partX/XianYu.srmodule`，blob `b063577a3a2d256274d84800db46840e7083f910`。
+- 闲鱼响应结构参考：`Scripts/xianyu/xianyu_ads.js`，blob `779fda417ed6b2d637543fa62fd126fe9646c05a`。
+- 高德模块参考：`Shadowrocket/module/split/partG/AutoNavi.srmodule`，blob `66175628d62404525b7ff81a6b813e23b012395c`。
+- 接口交叉参考：[闲鱼](https://github.com/ddgksf2013/Rewrite/blob/master/AdBlock/GoofishAds.conf)、[高德](https://github.com/ddgksf2013/Rewrite/blob/master/AdBlock/AmapAds.conf)。署名 ddgksf2013；没有镜像该项目的完整规则或混淆脚本，也不把其内容宣称为 GPL 授权。
+- 适配与维护：`zhangbao20-sina`；这些是明确缩小范围的适配版，不是原作者模块的完整镜像。
+
+### 修改范围
+
+- 使用 Shadowrocket 原生 `[URL Rewrite]` 和 `[Script]`；空 JSON 使用 `reject-dict`。追加具体 MITM 主机名，保留现有模块的解密列表。
+- 闲鱼开屏匹配限定两个具体主机、具体接口及路径边界；信息流脚本只移除 `AD` / `mamaAD` 明确标记。保留普通商品、未知卡片和正常推荐；不清空频道、搜索热词或个人主页。
+- 闲鱼脚本重新实现格式检查、错误回退及一次完成逻辑，限制为四类接口；未引入第三方网络请求或凭证存储。
+- 高德仅取开屏接口，未带入原规则中的整段 `/ws/valueadded/`、初始化接口清空、定位/日志域名封锁、天气移除或整套界面净化。
+- 不引入广泛 AMDC 拦截，不改变 Gemini / Google Maps / YouTube / OKX 分流和 DNS；不修改 WLOC。
+- 不使用远程第三方运行脚本。本地新增与改写部分按 GPL-3.0 发布，保留上述来源链。
+
+### 验证范围
+
+`node tests/app-ads.test.cjs`：50 项模拟响应与 URL 边界检查，覆盖明确广告过滤、普通及未知内容保留、空/异常响应放行、路径边界和其他业务不匹配。
+
+以上不是 iOS / Shadowrocket / 实际 App 的端到端验证；开屏缓存、App 接口版本及启动耗时仍待设备实测。
+
 ## 免责声明
 
 模块和规则可能因为 App 接口、广告 SDK、Shadowrocket 版本或上游脚本更新而失效。启用 MITM 的模块应只添加必要域名，并由使用者自行安装和信任本机证书。对来源不明的脚本，不应仅因“别人能用”就直接纳入长期配置。

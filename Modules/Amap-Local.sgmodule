@@ -1,0 +1,16 @@
+#!name=高德地图开屏去广告
+#!desc=针对已知开屏广告接口返回空 JSON。需启用 HTTPS 解密并信任本机证书；实际效果和启动耗时待设备验证。
+#!author=zhangbao20-sina（基于 fmz200/wool_scripts 适配）
+#!homepage=https://github.com/zhangbao20-sina/Shadowrocket-Config
+#!url=https://raw.githubusercontent.com/zhangbao20-sina/Shadowrocket-Config/main/Modules/Amap-Local.sgmodule
+#!update-url=https://raw.githubusercontent.com/zhangbao20-sina/Shadowrocket-Config/main/Modules/Amap-Local.sgmodule
+# 参考：fmz200/wool_scripts，GPL-3.0；端点交叉参考 ddgksf2013/Rewrite。
+# 不整段拦截 /ws/valueadded/ 或 startup/init；不修改定位、导航、天气和业务分流。
+# 不使用通配 MITM 主机名；不触碰 WLOC 的 bluedot.is.autonavi.com。
+
+[URL Rewrite]
+^https?:\/\/(?:m5|m5-zb|center|amap-aos-info-nogw|ai)\.amap\.com\/ws\/aos\/alimama\/splash_screen(?:_rt)?(?:\/|\?|$) - reject-dict
+^https?:\/\/(?:m5|m5-zb|center|amap-aos-info-nogw|ai)\.amap\.com\/ws\/valueadded\/alimama\/splash_screen(?:\/|\?|$) - reject-dict
+
+[MITM]
+hostname = %APPEND% m5.amap.com, m5-zb.amap.com, center.amap.com, amap-aos-info-nogw.amap.com, ai.amap.com
