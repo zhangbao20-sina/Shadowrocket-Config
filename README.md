@@ -8,7 +8,7 @@
 
 <p align="center">
   <a href="#-快速安装">快速安装</a> ·
-  <a href="#-使用说明">使用说明</a> ·
+  <a href="#-完整配置">完整配置</a> ·
   <a href="#-远程更新">远程更新</a> ·
   <a href="#-配置说明">配置说明</a> ·
   <a href="#-来源与许可">来源与许可</a>
@@ -71,6 +71,22 @@ https://raw.githubusercontent.com/zhangbao20-sina/Shadowrocket-Config/main/Confi
 ```text
 shadowrocket://config/add/https://raw.githubusercontent.com/zhangbao20-sina/Shadowrocket-Config/main/Config/Shadowrocket.conf
 ```
+
+</details>
+
+<details>
+<summary><strong>📱 完整配置使用说明（点击展开）</strong></summary>
+
+导入完整配置后：
+
+1. 打开 Shadowrocket → **配置**。
+2. 选择并启用 `Shadowrocket.conf`。
+3. 首页“全局路由”选择 **配置**。
+4. 在代理分组中分别为 YouTube、Gemini、TikTok、Talkatone、Google Maps 手动选择节点。
+5. Yahoo 保持自动测速台湾节点，无需手动指定。
+
+> 模块可以按需单独安装；不需要的模块不要开启。  
+> 如果某个 App 出现异常，优先一次只停用一个模块进行排查。
 
 </details>
 
@@ -199,21 +215,6 @@ shadowrocket://install?module=https%3A%2F%2Fraw.githubusercontent.com%2Fmeyifan2
 安装入口使用自定义域名 `d.a.us.ci`，远程模块及其脚本来自 `meyifan20-icloud/wloc`。在 Shadowrocket 中更新该远程模块即可拉取原仓库更新，无需复制到本仓库另行维护。
 
 </details>
-
----
-
-## 📱 使用说明
-
-导入完整配置后：
-
-1. 打开 Shadowrocket → **配置**。
-2. 选择并启用 `Shadowrocket.conf`。
-3. 首页“全局路由”选择 **配置**。
-4. 在代理分组中分别为 YouTube、Gemini、TikTok、Talkatone、Google Maps 手动选择节点。
-5. Yahoo 保持自动测速台湾节点，无需手动指定。
-
-> 模块可以按需单独安装；不需要的模块不要开启。  
-> 如果某个 App 出现异常，优先一次只停用一个模块进行排查。
 
 ---
 
