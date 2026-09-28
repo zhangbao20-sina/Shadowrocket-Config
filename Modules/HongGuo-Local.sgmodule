@@ -1,10 +1,10 @@
 #!url=https://raw.githubusercontent.com/zhangbao20-sina/Shadowrocket-Config/main/Modules/HongGuo-Local.sgmodule
 #!update-url=https://raw.githubusercontent.com/zhangbao20-sina/Shadowrocket-Config/main/Modules/HongGuo-Local.sgmodule
 #!name=红果短剧 - Local
-#!desc=红果短剧部分广告拦截与兼容放行｜个人维护版
+#!desc=红果短剧部分广告拦截与兼容放行｜停用共用域名拦截，待实机验证
 #!author=zhangbao20-sina
 #!homepage=https://github.com/zhangbao20-sina/Shadowrocket-Config
-#!version=2026.09.22
+#!version=2026.09.28-test.1
 
 # 本模块为个人维护适配版本，并非任何第三方项目的官方镜像。
 # 规则参考与核对来源：
@@ -15,11 +15,14 @@
 #
 # 设计原则：
 # - 不使用 MITM、脚本或响应改写
-# - 只保留高置信度广告/广告资源域名
-# - 保留 p3-ad-sign.byteimg.com 精确 DIRECT 例外，避免误伤相关图片资源
+# - 域名规则对所有应用生效，不能按 App 限定为仅红果生效
+# - 暂停 byteimg.com / zijieapi.com 共用域名拦截，排查抖音来客加载冲突
+# - 保留 p3-ad-sign.byteimg.com 精确 DIRECT 例外，避免改变原有图片资源路由
 # - 采用 REJECT 而非 REJECT-DROP，降低应用等待/重试带来的兼容性影响
 #
 # 说明：
+# 保留的 fqnovel.com / qznovelvod.com 规则也可能影响使用相同域名的其他应用。
+# 本次仅缩小拦截范围；抖音来客恢复情况与红果去广告效果仍需实机验证。
 # 当前 LOWERTOP 主分支还包含 v11-reading-video.qznovelvod.com。
 # 本地版暂不启用该条，因独立公开来源中的交叉验证不足，先以稳定为优先。
 
@@ -29,15 +32,17 @@
 # 兼容放行
 # =========================
 
-# 精确放行必须位于后续 *-ad-sign.byteimg.com 通配拦截之前
+# 保留既有图片资源直连例外
 DOMAIN,p3-ad-sign.byteimg.com,DIRECT
 
 # =========================
-# 红果短剧广告资源
+# 红果短剧相关广告资源
 # =========================
 
 DOMAIN-WILDCARD,*-misc-lq.fqnovel.com,REJECT
 DOMAIN-WILDCARD,*-reading-ad.qznovelvod.com,REJECT
-DOMAIN-WILDCARD,*-ad-sign.byteimg.com,REJECT
 DOMAIN-WILDCARD,*-iosreadingvideo.qznovelvod.com,REJECT
-DOMAIN-WILDCARD,ads*-normal-l*.zijieapi.com,REJECT
+
+# 暂停：以下共用域名不能限定为仅拦截红果，请勿在本轮测试中启用
+# DOMAIN-WILDCARD,*-ad-sign.byteimg.com,REJECT
+# DOMAIN-WILDCARD,ads*-normal-l*.zijieapi.com,REJECT
