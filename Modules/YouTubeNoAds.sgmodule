@@ -1,15 +1,20 @@
 #!name=YouTubeNoAds
-#!url=https://raw.githubusercontent.com/zhangbao20-sina/Shadowrocket-Config/main/Modules/YouTubeNoAds.sgmodule
-#!update-url=https://raw.githubusercontent.com/zhangbao20-sina/Shadowrocket-Config/main/Modules/YouTubeNoAds.sgmodule
-#!desc=YouTube / YouTube Music 去广告与增强。脚本镜像自 Maasea/sgmodule，保留上游官方匹配逻辑，仅改为本仓库固定 Raw 地址。
+#!desc=YouTube / YouTube Music 去广告与增强（Maasea 镜像，已启用 YouTube QUIC 回退适配主配置）
 #!author=Maasea / Personal mirror
 #!homepage=https://github.com/Maasea/sgmodule
+#!url=https://raw.githubusercontent.com/zhangbao20-sina/Shadowrocket-Config/main/Modules/YouTubeNoAds.sgmodule
+#!update-url=https://raw.githubusercontent.com/zhangbao20-sina/Shadowrocket-Config/main/Modules/YouTubeNoAds.sgmodule
 #!arguments=屏蔽上传按钮:true,屏蔽选段按钮:true,屏蔽Shorts按钮:false,字幕翻译语言:off,启用调试模式:false
 #!arguments-desc=- 屏蔽参数：[true, false] \n- 翻译参数：[语言代码, off] \n\n1. 语言代码遵循 Google Translate Languages Codes，填入 off 时关闭翻译\n2. 开启调试模式用于输出更多日志
 
-# Upstream: https://github.com/Maasea/sgmodule
-# License: Apache-2.0
-# Personal changes: self-hosted Raw URLs + module metadata only.
+[Rule]
+# 强制 YouTube 核心域名回退 TCP/HTTPS，防止节点支持 UDP 时走 QUIC 绕过 MITM 导致广告漏网
+AND,((PROTOCOL,UDP),(DEST-PORT,443),(DOMAIN,youtubei.googleapis.com)),REJECT-NO-DROP
+AND,((PROTOCOL,UDP),(DEST-PORT,443),(DOMAIN-SUFFIX,googlevideo.com)),REJECT-NO-DROP
+
+[URL Rewrite]
+# 兜底拦截广告视频流预加载
+^https?:\/\/[\w-]+\.googlevideo\.com\/initplayback.+&oad - reject-200
 
 [Script]
 youtube.response = type=http-response,pattern=^https:\/\/youtubei\.googleapis\.com\/(youtubei\/v1\/(browse|next|player|search|reel\/reel_watch_sequence|guide|account\/get_setting|get_watch|log_event|config))(\?(.*))?$,requires-body=1,max-size=-1,binary-body-mode=1,script-path=https://raw.githubusercontent.com/zhangbao20-sina/Shadowrocket-Config/main/Scripts/YouTube/youtube.response.js,argument="{"captionLang":"{{{字幕翻译语言}}}","blockUpload":{{{屏蔽上传按钮}}},"blockImmersive":{{{屏蔽选段按钮}}},"blockShorts":{{{屏蔽Shorts按钮}}},"debug":{{{启用调试模式}}}}"
